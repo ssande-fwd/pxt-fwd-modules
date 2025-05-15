@@ -37,7 +37,7 @@ namespace buttons {
   //% fixedInstance whenUsed
   export const BTN1 = new FwdLTSBtnClient("BTN1?srvo=0")
   //% fixedInstance whenUsed
-  export const BTN2 = new FwdLTSBtnClient("BTN2srvo=1")
+  export const BTN2 = new FwdLTSBtnClient("BTN2?srvo=1")
   //% fixedInstance whenUsed
   export const BTN3 = new FwdLTSBtnClient("BTN3?srvo=2")
 
