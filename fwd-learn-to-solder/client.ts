@@ -42,11 +42,11 @@ namespace buttons {
   export const BTN3 = new FwdLTSBtnClient("BTN3?srvo=2")
 
   //% fixedInstance whenUsed
-  export const BTN4 = new FwdLTSBtnClient("BTN4?srvo=4")
+  export const BTN4 = new FwdLTSBtnClient("BTN4?srvo=3")
   //% fixedInstance whenUsed
-  export const BTN5 = new FwdLTSBtnClient("BTN5?srvo=5")
+  export const BTN5 = new FwdLTSBtnClient("BTN5?srvo=4")
   //% fixedInstance whenUsed
-  export const BTN6 = new FwdLTSBtnClient("BTN6?srvo=6")
+  export const BTN6 = new FwdLTSBtnClient("BTN6?srvo=5")
 
 }
 
