@@ -42,11 +42,11 @@ namespace buttons {
   export const BTN3 = new FwdLTSBtnClient("BTN3?srvo=2")
 
   //% fixedInstance whenUsed
-  export const BTN4 = new FwdLTSBtnClient("BTN4?srvo=3")
+  export const BTN4 = new FwdLTSBtnClient("BTN4")
   //% fixedInstance whenUsed
-  export const BTN5 = new FwdLTSBtnClient("BTN5?srvo=4")
+  export const BTN5 = new FwdLTSBtnClient("BTN5")
   //% fixedInstance whenUsed
-  export const BTN6 = new FwdLTSBtnClient("BTN6?srvo=5")
+  export const BTN6 = new FwdLTSBtnClient("BTN6")
 
 }
 
@@ -81,4 +81,11 @@ namespace lights {
   export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
   //% fixedInstance
   export const RED = new FwdLTSLightClient("RED?srvo=2")
+
+  //% fixedInstance
+  export const GREEN2 = new FwdLTSLightClient("GREEN2")
+  //% fixedInstance
+  export const YELLOW2 = new FwdLTSLightClient("YELLOW2")
+  //% fixedInstance
+  export const RED2 = new FwdLTSLightClient("RED2")
 }
