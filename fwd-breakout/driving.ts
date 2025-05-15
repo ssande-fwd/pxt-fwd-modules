@@ -2,12 +2,12 @@ namespace modules {
    
   function createDrivingControls () {
     let enabled = false
-    let leftMotor: fwdMotors.FwdServoClient
-    let rightMotor: fwdMotors.FwdServoClient
+    let leftMotor: modules.FwdServoClient
+    let rightMotor: modules.FwdServoClient
     let leftBias = 1
     let rightBias = 1
 
-    function initMotors (left: fwdMotors.FwdServoClient, right: fwdMotors.FwdServoClient, bias = 0) {
+    function initMotors (left: modules.FwdServoClient, right: modules.FwdServoClient, bias = 0) {
       leftMotor = left
       rightMotor = right
       if (bias > 0) {
