@@ -8,7 +8,7 @@
         "jacdac": "github:microsoft/pxt-jacdac#v1.9.32"
     },
     "files": [
-        "fwd-common/common.ts"
+        "common/common.ts"
     ],
     "testFiles": [
         
