@@ -1,0 +1,19 @@
+{
+    "name": "Forward Education Lights Module V4",
+    "version": "2.0.0",
+    "description": "Controls LED lights",
+    "dependencies": {
+        "core": "*",
+        "jacdac": "github:microsoft/pxt-jacdac"
+    },
+    "files": [
+        "constants.ts",
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
