@@ -1,4 +1,4 @@
-namespace modules {
+namespace buttons {
 
   //% fixedInstances
   export class FwdTouchClient extends modules.ButtonClient {

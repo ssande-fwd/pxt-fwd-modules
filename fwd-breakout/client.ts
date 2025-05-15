@@ -1,4 +1,4 @@
-namespace modules {
+namespace motors {
 
   /**
    * The pump is an on-board relay

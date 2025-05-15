@@ -1,4 +1,4 @@
-namespace modules {
+namespace buttons {
   
   export const enum DialDirection {
     

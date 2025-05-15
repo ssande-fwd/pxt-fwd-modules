@@ -1,4 +1,4 @@
-namespace modules {
+namespace motors {
    
   function createDrivingControls () {
     let enabled = false
