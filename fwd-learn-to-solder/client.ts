@@ -1,16 +1,10 @@
 namespace buttons {
-  
-  export class FwdLTSBtnClient extends modules.ButtonClient {
 
-    private static instanceCount = 0;
+   //% fixedInstances
+  export class FwdLTSBtnClient extends modules.ButtonClient {
 
     constructor(role: string) {
       super(role)
-      FwdLTSBtnClient.instanceCount++;
-    }
-
-    static getCreatedCount(): number {
-      return FwdLTSBtnClient.instanceCount;
     }
 
     /**
@@ -18,7 +12,7 @@ namespace buttons {
      * @param event Button pressed (down), held, released (up)
      */
     //% group="Learn To Solder"
-    //% block="on %ltsBtn $event"
+    //% block="on $this $event"
     //% blockId=fwd_lts_on_press
     fwdOnPress(event: jacdac.ButtonEvent, handler: () => void) { super.onEvent(event, handler) }
 
@@ -26,7 +20,7 @@ namespace buttons {
      * Returns the ms duration of the last button hold in ms
      */
     //% group="Learn To Solder"
-    //% block="%ltsBtn hold duration (ms)"
+    //% block="$this hold duration (ms)"
     //% blockId=fwd_lts_hold_duration
     fwdHoldDuration(): number { return super.holdDuration() }
 
@@ -34,45 +28,28 @@ namespace buttons {
      * Returns true if the button is currently pressed, otherwise false
      */
     //% group="Learn To Solder"
-    //% block="%ltsBtn pressed"
+    //% block="$this pressed"
     //% blockId=fwd_lts_is_pressed
     fwdIsPressed(): boolean { return super.pressed() }
 
   }
 
-  /**
-   * Create a Learn To Solder button client and automtically set it to a variable.
-   */
-  //% group="Learn To Solder"
-  //% block="Create LTS Button"
-  //% blockSetVariable=ltsBtn
-  //% weight=101
-  export function createLTSBtn(): FwdLTSBtnClient {
-      
-    let role = "";
-    if (buttons.FwdLTSBtnClient.getCreatedCount() === 0) {
-        role = 'ltsBtn'
-    } else {
-        role = 'ltsBtn' + (buttons.FwdLTSBtnClient.getCreatedCount() + 1)
-    }
-    
-    return new FwdLTSBtnClient(role)
-  }
+  //% fixedInstance whenUsed
+  export const BTN1 = new FwdLTSBtnClient("BTN1")
+  //% fixedInstance whenUsed
+  export const BTN2 = new FwdLTSBtnClient("BTN2")
+  //% fixedInstance whenUsed
+  export const BTN3 = new FwdLTSBtnClient("BTN3")
 
 }
 
 namespace lights {
 
+ //% fixedInstances
   export class FwdLTSLightClient extends modules.LightbulbClient {
-
-    private static instanceCount = 0;
 
     constructor(role: string) {
       super(role)
-    }
-
-    static getCreatedCount(): number {
-      return FwdLTSLightClient.instanceCount;
     }
 
     /**
@@ -81,7 +58,7 @@ namespace lights {
      */
     //% group="Learn To Solder"
     //% blockId=jacdac_ltslight_brightness___set
-    //% block="set %ltsLight brightness to %value (\\%)"
+    //% block="set %lights brightness to %value (\\%)"
     //% weight=100
     //% value.min=0
     //% value.max=100
@@ -91,22 +68,10 @@ namespace lights {
     }
   }
 
-  /**
-   * Create a Learn To Solder light client and automtically set it to a variable.
-   */
-  //% group="Learn To Solder"
-  //% block="Create LTS Light"
-  //% blockSetVariable=ltsLight
-  //% weight=101
-  export function createLTSLight(): FwdLTSLightClient {
-      
-    let role = "";
-    if (lights.FwdLTSLightClient.getCreatedCount() === 0) {
-        role = 'ltsLight'
-    } else {
-        role = 'ltsLight' + (lights.FwdLTSLightClient.getCreatedCount() + 1)
-    }
-    
-    return new FwdLTSLightClient(role)
-  }
+  //% fixedInstance
+  export const RED = new FwdLTSLightClient("RED?srvo=0")
+  //% fixedInstance
+  export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
+  //% fixedInstance
+  export const GREEN = new FwdLTSLightClient("GREEN?srvo=2")
 }
