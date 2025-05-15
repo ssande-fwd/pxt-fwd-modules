@@ -35,11 +35,11 @@ namespace buttons {
   }
 
   //% fixedInstance whenUsed
-  export const BTN1 = new FwdLTSBtnClient("BTN1")
+  export const BTN1 = new FwdLTSBtnClient("BTN1?srvo=0")
   //% fixedInstance whenUsed
-  export const BTN2 = new FwdLTSBtnClient("BTN2")
+  export const BTN2 = new FwdLTSBtnClient("BTN2srvo=1")
   //% fixedInstance whenUsed
-  export const BTN3 = new FwdLTSBtnClient("BTN3")
+  export const BTN3 = new FwdLTSBtnClient("BTN3?srvo=2")
 
 }
 
@@ -67,11 +67,11 @@ namespace lights {
       super.setBrightness(value);
     }
   }
-
+  
   //% fixedInstance
-  export const RED = new FwdLTSLightClient("RED?srvo=2")
+  export const GREEN = new FwdLTSLightClient("GREEN?srvo=0")
   //% fixedInstance
   export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
   //% fixedInstance
-  export const GREEN = new FwdLTSLightClient("GREEN?srvo=0")
+  export const RED = new FwdLTSLightClient("RED?srvo=2")
 }
