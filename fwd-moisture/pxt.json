@@ -1,0 +1,16 @@
+{
+    "name": "fwd-moisture",
+    "version": "2.0.0",
+    "description": "FWD Edu Climate Action Kit Gen. 2 Moisture",
+    "license": "MIT",
+    "dependencies": {
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "jacdac-soil-moisture": "github:microsoft/pxt-jacdac/soil-moisture"
+    },
+    "files": [
+        "client.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
