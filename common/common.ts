@@ -1,4 +1,4 @@
-namespace modules {
+namespace sensors {
   
   export const enum ThresholdDirection {
     //% block="over"
