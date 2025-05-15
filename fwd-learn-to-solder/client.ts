@@ -72,7 +72,7 @@ namespace lights {
   //% fixedInstance
   export const GREEN = new FwdLTSLightClient("GREEN?srvo=1")
   //% fixedInstance
-  export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=1")
+  export const YELLOW = new FwdLTSLightClient("YELLOW?srvo=2")
   //% fixedInstance
   export const RED = new FwdLTSLightClient("RED?srvo=3")
 }
