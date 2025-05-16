@@ -23,7 +23,7 @@ namespace sensors {
     //% block="on $this level changed by $threshold (\\%)"
     //% blockId=fwd_moisture_on_level_change
     //% threshold.min=1 threshold.max=100 threshold.defl=5
-    fwdOnMoistureLevelChangedBy(threshold: number, handler: () => void): void { this.onReadingChangedBy(threshold, handler) }
+    fwdOnMoistureLevelChangedBy(threshold: number, handler: () => void): void { this.onMoistureChangedBy(threshold, handler) }
 
     /**
      * Runs code when the moisture level goes above or below a set threshold
