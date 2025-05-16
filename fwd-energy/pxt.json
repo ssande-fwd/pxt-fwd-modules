@@ -1,0 +1,16 @@
+{
+    "name": "fwd-energy",
+    "version": "2.0.1",
+    "description": "FWD Edu Energy",
+    "license": "MIT",
+    "dependencies": {
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "jacdac-button": "github:microsoft/pxt-jacdac/button"
+    },
+    "files": [
+        "client.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
