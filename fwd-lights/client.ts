@@ -27,6 +27,12 @@ namespace lights {
         }
     }
 
-    //% fixedInstance whenUsed weight=1 block="lights1"
+    //% fixedInstance whenUsed
     export const lights1 = new LightsClient("lights1")
+    //% fixedInstance whenUsed
+    export const lights2 = new LightsClient("lights2")
+    //% fixedInstance whenUsed
+    export const lights3 = new LightsClient("lights3")
+    //% fixedInstance whenUsed
+    export const lights4 = new LightsClient("lights4")
 }

@@ -58,4 +58,10 @@ namespace sensors {
 
     //% fixedInstance whenUsed
     export const ph1 = new FwdPhClient("ph1");
+    //% fixedInstance whenUsed
+    export const ph2 = new FwdPhClient("ph2");
+    //% fixedInstance whenUsed
+    export const ph3 = new FwdPhClient("ph3");
+    //% fixedInstance whenUsed
+    export const ph4 = new FwdPhClient("ph4");
 }

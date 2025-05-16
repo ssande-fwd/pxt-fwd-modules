@@ -36,5 +36,11 @@ namespace buttons {
   }
 
   //% fixedInstance whenUsed
-  export const touch = new FwdTouchClient("touch1")
+  export const touch1 = new FwdTouchClient("touch1")
+  //% fixedInstance whenUsed
+  export const touch2 = new FwdTouchClient("touch2")
+  //% fixedInstance whenUsed
+  export const touch3 = new FwdTouchClient("touch3")
+  //% fixedInstance whenUsed
+  export const touch4 = new FwdTouchClient("touch4")
 }

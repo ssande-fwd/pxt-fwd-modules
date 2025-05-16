@@ -44,5 +44,11 @@ namespace sensors {
   }
 
   //% fixedInstance whenUsed
-  export const sonar1 = new FwdSonarClient("sonar 1");
+  export const sonar1 = new FwdSonarClient("sonar1");
+  //% fixedInstance whenUsed
+  export const sonar2 = new FwdSonarClient("sonar2");
+  //% fixedInstance whenUsed
+  export const sonar3 = new FwdSonarClient("sonar3");
+  //% fixedInstance whenUsed
+  export const sonar4 = new FwdSonarClient("sonar4");
 }

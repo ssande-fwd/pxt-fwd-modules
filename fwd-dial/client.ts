@@ -115,4 +115,10 @@ namespace buttons {
 
   //% fixedInstance whenUsed
   export const dialButton1 = new FwdDialButtonClient("dialButton1")
+  //% fixedInstance whenUsed
+  export const dialButton2 = new FwdDialButtonClient("dialButton2")
+  //% fixedInstance whenUsed
+  export const dialButton3 = new FwdDialButtonClient("dialButton3")
+  //% fixedInstance whenUsed
+  export const dialButton4 = new FwdDialButtonClient("dialButton4")
 }

@@ -35,5 +35,11 @@ namespace sensors {
   }
 
   //% fixedInstance whenUsed
-  export const float = new FwdFloatClient("float1")
+  export const float1 = new FwdFloatClient("float1")
+  //% fixedInstance whenUsed
+  export const float2 = new FwdFloatClient("float2")
+  //% fixedInstance whenUsed
+  export const float3 = new FwdFloatClient("float3")
+  //% fixedInstance whenUsed
+  export const float4 = new FwdFloatClient("float4")
 }

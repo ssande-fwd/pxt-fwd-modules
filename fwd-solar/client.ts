@@ -54,5 +54,11 @@ namespace sensors {
   }
 
   //% fixedInstance whenUsed
-  export const solar1 = new FwdSolarClient("solar 1");
+  export const solar1 = new FwdSolarClient("solar1");
+  //% fixedInstance whenUsed
+  export const solar2 = new FwdSolarClient("solar2");
+  //% fixedInstance whenUsed
+  export const solar3 = new FwdSolarClient("solar3");
+  //% fixedInstance whenUsed
+  export const solar4 = new FwdSolarClient("solar4");
 }

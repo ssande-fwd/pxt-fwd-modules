@@ -19,5 +19,11 @@ namespace sensors {
     }
 
     //% fixedInstance whenUsed
-    export const temp1 = new FwdTemperatureClient("temp1");
+    export const temperature1 = new FwdTemperatureClient("temperature1");
+    //% fixedInstance whenUsed
+    export const temperature2 = new FwdTemperatureClient("temperature2");
+    //% fixedInstance whenUsed
+    export const temperature3 = new FwdTemperatureClient("temperature3");
+    //% fixedInstance whenUsed
+    export const temperature4 = new FwdTemperatureClient("temperature4");
 }

@@ -44,5 +44,11 @@ namespace sensors {
   }
 
   //% fixedInstance whenUsed
-  export const soilMoisture1 = new FwdSoilMoistureClient("soil moisture 1");
+  export const moisture1 = new FwdSoilMoistureClient("moisture1");
+  //% fixedInstance whenUsed
+  export const moisture2 = new FwdSoilMoistureClient("moisture2");
+  //% fixedInstance whenUsed
+  export const moisture3 = new FwdSoilMoistureClient("moisture3");
+  //% fixedInstance whenUsed
+  export const moisture4 = new FwdSoilMoistureClient("moisture4");
 }
