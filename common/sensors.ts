@@ -1,5 +1,5 @@
 //% color=#59BAE3
-//% icon="\uf013"
+//% icon="\uf1eb"
 //% weight=202  
 namespace sensors {
   
