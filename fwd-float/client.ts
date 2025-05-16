@@ -1,4 +1,4 @@
-namespace switches {
+namespace sensors {
 
   //% fixedInstances
   export class FwdFloatClient extends modules.ButtonClient {
