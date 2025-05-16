@@ -51,10 +51,12 @@ namespace sensors {
      * The current measurement.
      */
     //% group="Energy"
-    //% block="%this measurement (A)"
+    //% block="%this measurement (mA)"
     //% blockId=fwd_dccurrentmeasurement_measurement___get
     measurement(): number {
-        return super.reading()
+      const amps = super.reading();
+      const milliamps = Math.round(amps * 1000);
+      return milliamps;
     }
 
     /**
