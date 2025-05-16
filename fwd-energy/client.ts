@@ -64,7 +64,7 @@ namespace sensors {
      */
     //% group="Energy"
     //% blockId=fwd_dccurrentmeasurement_on_measurement_change
-    //% block="on %this measurement changed by %threshold (A)"
+    //% block="on %this measurement changed by %threshold (mA)"
     //% threshold.min=0
     //% threshold.defl=1
     onMeasurementChangedBy(threshold: number, handler: () => void): void {
