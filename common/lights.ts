@@ -1,4 +1,4 @@
-//% color=#59BAE3
+//% color=#ccc832
 //% icon="\uf0eb"
 //% weight=200  
 namespace lights {}
