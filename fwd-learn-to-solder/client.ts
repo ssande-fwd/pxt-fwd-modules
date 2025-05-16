@@ -47,7 +47,6 @@ namespace buttons {
   export const BTN5 = new FwdLTSBtnClient("BTN5")
   //% fixedInstance whenUsed
   export const BTN6 = new FwdLTSBtnClient("BTN6")
-
 }
 
 namespace lights {
