@@ -4,7 +4,7 @@
     "description": "Controls LED lights",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
-        "lightbulb": "github:climate-action-kits/ALPHA-makecode-extension/lightbulb"
+        "lightbulb": "github:ssande-fwd/pxt-fwd-modules/lightbulb"
     },
     "files": [
         "client.ts"

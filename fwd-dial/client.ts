@@ -74,9 +74,15 @@ namespace buttons {
     
   }
 
-  
-  //% fixedInstance whenUsed weight=1 block="dial1"
+  //% fixedInstance whenUsed
   export const dial1 = new FwdDialClient("dial1")
+  //% fixedInstance whenUsed
+  export const dial2 = new FwdDialClient("dial2")
+  //% fixedInstance whenUsed
+  export const dial3 = new FwdDialClient("dial3")
+  //% fixedInstance whenUsed
+  export const dial4 = new FwdDialClient("dial4")
+
 
   //% fixedInstances
   export class FwdDialButtonClient extends modules.ButtonClient {
