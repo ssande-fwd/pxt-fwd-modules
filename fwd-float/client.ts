@@ -36,7 +36,8 @@ namespace sensors {
     //% block="$this $state"
     //% blockId=fwd_float_is_raised
     fwdFloatState(state: FloatState): boolean { 
-    
+      
+      console.log(super.pressed())
       if (state === FloatState.raised) {
         return super.pressed()
       } else {
@@ -44,7 +45,7 @@ namespace sensors {
       }
     }
   }
-  
+
   //% fixedInstance whenUsed
   export const float1 = new FwdFloatClient("float1")
   //% fixedInstance whenUsed
