@@ -27,7 +27,7 @@ namespace sensors {
      * @param state on or off
     */
     //% group="Line"
-    //% block="$this state is $state"
+    //% block="$this is $state"
     //% blockId=fwd_line_sensor_state_check
     fwdIsLineSensorState(state: LineSensorState): boolean { return state === this.fwdLineSensorState() }
 
