@@ -30,11 +30,11 @@ namespace sensors {
     }
 
     /**
-     * Returns true if the float is currently raised, otherwise false
+     * Returns true if the sensor is in the designated state
      */
     //% group="Float"
-    //% block="$this $state"
-    //% blockId=fwd_float_is_raised
+    //% block="$this state is $state"
+    //% blockId=fwd_float_state
     fwdFloatState(state: FloatState): boolean { 
 
       if (state === FloatState.raised) {
