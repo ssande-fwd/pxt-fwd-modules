@@ -43,7 +43,8 @@ namespace sensors {
         return !super.pressed()
       }
     }
-
+  }
+  
   //% fixedInstance whenUsed
   export const float1 = new FwdFloatClient("float1")
   //% fixedInstance whenUsed
