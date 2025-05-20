@@ -33,7 +33,7 @@ namespace sensors {
      * Returns true if the sensor is in the designated state
      */
     //% group="Float"
-    //% block="$this state is $state"
+    //% block="$this is $state"
     //% blockId=fwd_float_state
     fwdFloatState(state: FloatState): boolean { 
 

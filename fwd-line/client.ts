@@ -24,7 +24,7 @@ namespace sensors {
 
     /**
      * Checks for a specific line sensor state
-     * @param state ○ (miss) or ● (hit)
+     * @param state on or off
     */
     //% group="Line"
     //% block="$this state is $state"
