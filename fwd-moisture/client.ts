@@ -1,11 +1,20 @@
 namespace sensors {
 
+  enum FloatState {
+    //% block="raised"
+    raised,
+    //% block="lowered"
+    lowered 
+  }
+
   //% fixedInstances
   export class FwdSoilMoistureClient extends modules.SoilMoistureClient {
 
     constructor(role: string) {
       super(role)
     }
+
+    
 
     /**
      * Returns the sensor's moisture level as a number between 0-100

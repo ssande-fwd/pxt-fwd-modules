@@ -1,5 +1,12 @@
 namespace sensors {
 
+  enum FloatState {
+    //% block="raised"
+    raised,
+    //% block="lowered"
+    lowered 
+  }
+
   //% fixedInstances
   export class FwdFloatClient extends modules.ButtonClient {
 
@@ -13,10 +20,10 @@ namespace sensors {
     //% group="Float"
     //% block="on $this $state"
     //% blockId=fwd_float_on_changed
-    fwdOnFloatChange(state: string, handler: () => void) { 
-      if (state === "raised") {
+    fwdOnFloatChange(state: FloatState, handler: () => void) { 
+      if (state === FloatState.raised) {
         super.onEvent(jacdac.ButtonEvent.Down, handler) 
-      } else if (state === "lowered") {
+      } else if (state === FloatState.lowered) {
         super.onEvent(jacdac.ButtonEvent.Up, handler) 
       }
     }
