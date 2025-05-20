@@ -11,17 +11,15 @@ namespace sensors {
      * Code to run when a chosen event occurs
      */
     //% group="Float"
-    //% block="on $this raised"
-    //% blockId=fwd_float_on_raised
-    fwdOnFloatRaised(handler: () => void) { super.onEvent(jacdac.ButtonEvent.Down, handler) }
-
-    /**
-     * Code to run when a chosen event occurs
-     */
-    //% group="Float"
-    //% block="on $this lowered"
-    //% blockId=fwd_float_on_lowered
-    fwdOnFloatLowered(handler: () => void) { super.onEvent(jacdac.ButtonEvent.Up, handler) }
+    //% block="on $this $state"
+    //% blockId=fwd_float_on_changed
+    fwdOnFloatChange(state: string, handler: () => void) { 
+      if (state === "raised") {
+        super.onEvent(jacdac.ButtonEvent.Down, handler) 
+      } else if (state === "lowered") {
+        super.onEvent(jacdac.ButtonEvent.Up, handler) 
+      }
+    }
 
     /**
      * Returns true if the button is currently pressed, otherwise false
@@ -29,9 +27,7 @@ namespace sensors {
     //% group="Float"
     //% block="$this raised"
     //% blockId=fwd_float_is_raised
-    fwdIsFloatRaised(): boolean { return this.pressed() }
-
-
+    fwdIsFloatRaised(): boolean { return super.pressed() }
   }
 
   //% fixedInstance whenUsed
