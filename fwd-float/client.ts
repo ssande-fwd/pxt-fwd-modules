@@ -21,6 +21,7 @@ namespace sensors {
     //% block="on $this $state"
     //% blockId=fwd_float_on_changed
     fwdOnFloatChange(state: FloatState, handler: () => void) { 
+      
       if (state === FloatState.raised) {
         super.onEvent(jacdac.ButtonEvent.Down, handler) 
       } else if (state === FloatState.lowered) {
@@ -34,8 +35,14 @@ namespace sensors {
     //% group="Float"
     //% block="$this $state"
     //% blockId=fwd_float_is_raised
-    fwdFloatState(state: FloatState): boolean { return super.pressed() }
-  }
+    fwdFloatState(state: FloatState): boolean { 
+    
+      if (state === FloatState.raised) {
+        return super.pressed()
+      } else {
+        return !super.pressed()
+      }
+    }
 
   //% fixedInstance whenUsed
   export const float1 = new FwdFloatClient("float1")
