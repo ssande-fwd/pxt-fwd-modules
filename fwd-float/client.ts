@@ -1,6 +1,6 @@
 namespace sensors {
 
-  enum FloatState {
+  export const enum FloatState {
     //% block="raised"
     raised,
     //% block="lowered"
