@@ -29,12 +29,12 @@ namespace sensors {
     }
 
     /**
-     * Returns true if the button is currently pressed, otherwise false
+     * Returns true if the float is currently raised, otherwise false
      */
     //% group="Float"
-    //% block="$this raised"
+    //% block="$this $state"
     //% blockId=fwd_float_is_raised
-    fwdIsFloatRaised(): boolean { return super.pressed() }
+    fwdFloatState(state: FloatState): boolean { return super.pressed() }
   }
 
   //% fixedInstance whenUsed
