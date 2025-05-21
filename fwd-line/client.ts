@@ -1,10 +1,10 @@
 namespace sensors {
 
   export const enum LineSensorState {
-    //% block="off"
-    off = 0,
-    //% block="on"
-    on = 1
+    //% block="OFF"
+    OFF = 0,
+    //% block="ON"
+    ON = 1
   } 
 
   //% fixedInstances
@@ -24,7 +24,7 @@ namespace sensors {
 
     /**
      * Checks for a specific line sensor state
-     * @param state on or off
+     * @param state ON or OFF
     */
     //% group="Line"
     //% block="$this is $state"

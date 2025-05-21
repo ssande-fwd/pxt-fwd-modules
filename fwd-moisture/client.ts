@@ -1,11 +1,6 @@
 namespace sensors {
 
-  enum FloatState {
-    //% block="raised"
-    raised,
-    //% block="lowered"
-    lowered 
-  }
+  
 
   //% fixedInstances
   export class FwdSoilMoistureClient extends modules.SoilMoistureClient {

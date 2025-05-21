@@ -10,7 +10,7 @@ namespace sensors {
         /**
          * Returns the sensor's distance reading in meters
          */
-        //% group="Temperature"
+        //% group="Temperature Probe"
         //% block="$this °C"
         //% blockId=fwd_temperature_get_temperature
         fwdTemperature(): number {
