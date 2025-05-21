@@ -8,13 +8,7 @@
         "jacdac-rotary-encoder": "github:microsoft/pxt-jacdac/rotary-encoder",
         "jacdac-button": "github:microsoft/pxt-jacdac/button"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
+    "supportedTargets": ["microbit"]
 }

@@ -1,8 +1,6 @@
 namespace sensors {
-
     //% fixedInstances
     export class FwdTemperatureClient extends modules.TemperatureClient {
-
         constructor(role: string) {
             super(role)
         }
@@ -14,16 +12,16 @@ namespace sensors {
         //% block="$this °C"
         //% blockId=fwd_temperature_get_temperature
         fwdTemperature(): number {
-            return super.temperature();
+            return super.temperature()
         }
     }
 
     //% fixedInstance whenUsed
-    export const temperature1 = new FwdTemperatureClient("temperature1");
+    export const temperature1 = new FwdTemperatureClient("temperature1")
     //% fixedInstance whenUsed
-    export const temperature2 = new FwdTemperatureClient("temperature2");
+    export const temperature2 = new FwdTemperatureClient("temperature2")
     //% fixedInstance whenUsed
-    export const temperature3 = new FwdTemperatureClient("temperature3");
+    export const temperature3 = new FwdTemperatureClient("temperature3")
     //% fixedInstance whenUsed
-    export const temperature4 = new FwdTemperatureClient("temperature4");
+    export const temperature4 = new FwdTemperatureClient("temperature4")
 }

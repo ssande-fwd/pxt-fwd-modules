@@ -7,13 +7,7 @@
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-temperature": "github:microsoft/pxt-jacdac/temperature"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
+    "supportedTargets": ["microbit"]
 }

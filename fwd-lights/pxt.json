@@ -6,13 +6,7 @@
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "lightbulb": "github:ssande-fwd/pxt-fwd-modules/lightbulb"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
+    "supportedTargets": ["microbit"]
 }

@@ -7,10 +7,6 @@
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-light-level": "github:microsoft/pxt-jacdac/light-level"
     },
-    "files": [
-        "client.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "supportedTargets": ["microbit"]
 }

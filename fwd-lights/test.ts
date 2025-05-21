@@ -1,1 +1,1 @@
-fwdSensors.lights1.setBrightness(100)
+lights.lights1.setBrightness(100)

@@ -1,54 +1,57 @@
 namespace sensors {
+    //% fixedInstances
+    export class FwdSonarClient extends modules.DistanceClient {
+        constructor(role: string) {
+            super(role)
+        }
 
-  //% fixedInstances
-  export class FwdSonarClient extends modules.DistanceClient {
+        /**
+         * Returns the sensor's distance reading in meters
+         */
+        //% group="Sonar"
+        //% block="$this distance (m)"
+        //% blockId=fwd_sonar_get_distance
+        fwdDistance(): number {
+            return super.distance()
+        }
 
-    constructor(role: string) {
-      super(role)
+        /**
+         * Runs code when the distance changes by more than a certain amount between readings
+         * @param threshold how many percent two readings have to differ by before code is run
+         */
+        //% group="Sonar"
+        //% block="on $this distance changed by $threshold m"
+        //% blockId=fwd_sonar_on_distance_change
+        fwdOnDistanceChangedBy(threshold: number, handler: () => void): void {
+            super.onReadingChangedBy(threshold, handler)
+        }
+
+        /**
+         * Runs code when the distance goes over or under a set threshold
+         * @param threshold what distance is the cut off before the code is run
+         * @param direction run when the distance is over or under your set threshold
+         */
+        //% group="Sonar"
+        //% block="$this distance is $direction $threshold m"
+        //% blockId=fwd_solar_is_distance_past_threshold
+        fwdDistancePastThreshold(
+            threshold: number,
+            direction: ThresholdDirection
+        ): boolean {
+            const difference = super.distance() - threshold > 0
+            const isPastThreshold =
+                (direction === ThresholdDirection.Over && difference) ||
+                (direction === ThresholdDirection.Under && !difference)
+            return isPastThreshold
+        }
     }
 
-    /**
-     * Returns the sensor's distance reading in meters
-    */
-    //% group="Sonar"
-    //% block="$this distance (m)"
-    //% blockId=fwd_sonar_get_distance
-    fwdDistance(): number { return super.distance() }
-
-    /**
-     * Runs code when the distance changes by more than a certain amount between readings
-     * @param threshold how many percent two readings have to differ by before code is run
-    */
-    //% group="Sonar"
-    //% block="on $this distance changed by $threshold m"
-    //% blockId=fwd_sonar_on_distance_change
-    fwdOnDistanceChangedBy(threshold: number, handler: () => void): void {
-      super.onReadingChangedBy(threshold, handler)
-    }
-
-    /**
-     * Runs code when the distance goes over or under a set threshold
-     * @param threshold what distance is the cut off before the code is run
-     * @param direction run when the distance is over or under your set threshold
-    */
-    //% group="Sonar"
-    //% block="$this distance is $direction $threshold m"
-    //% blockId=fwd_solar_is_distance_past_threshold
-    fwdDistancePastThreshold(threshold: number, direction: ThresholdDirection ): boolean {
-      const difference = super.distance() - threshold > 0;
-      const isPastThreshold = 
-        direction === ThresholdDirection.Over && difference ||
-        direction === ThresholdDirection.Under && !difference;
-      return isPastThreshold 
-    }
-  }
-
-  //% fixedInstance whenUsed
-  export const sonar1 = new FwdSonarClient("sonar1");
-  //% fixedInstance whenUsed
-  export const sonar2 = new FwdSonarClient("sonar2");
-  //% fixedInstance whenUsed
-  export const sonar3 = new FwdSonarClient("sonar3");
-  //% fixedInstance whenUsed
-  export const sonar4 = new FwdSonarClient("sonar4");
+    //% fixedInstance whenUsed
+    export const sonar1 = new FwdSonarClient("sonar1")
+    //% fixedInstance whenUsed
+    export const sonar2 = new FwdSonarClient("sonar2")
+    //% fixedInstance whenUsed
+    export const sonar3 = new FwdSonarClient("sonar3")
+    //% fixedInstance whenUsed
+    export const sonar4 = new FwdSonarClient("sonar4")
 }

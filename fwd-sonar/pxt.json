@@ -7,10 +7,6 @@
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-distance": "github:microsoft/pxt-jacdac/distance"
     },
-    "files": [
-        "client.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "supportedTargets": ["microbit"]
 }
