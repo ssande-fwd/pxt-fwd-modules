@@ -15,8 +15,8 @@ namespace jacdac {
 
     export namespace LightsRegPack {
         /**
-        * Pack format for 'brightness' data.
-        */
+         * Pack format for 'brightness' data.
+         */
         export const Brightness = "u0.8"
     }
 }

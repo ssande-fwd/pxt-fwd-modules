@@ -14,7 +14,7 @@ namespace buttons {
     //% group="Touch"
     //% block="on $this $event"
     //% blockId=fwd_touch_on_touch
-    fwdOnTouch(event: jacdac.ButtonEvent, handler: () => void) { this.onEvent(event, handler) }
+    fwdOnTouch(event: jacdac.ButtonEvent, handler: () => void) { super.onEvent(event, handler) }
 
     /**
      * Returns the ms duration of the last button hold in ms
@@ -22,7 +22,7 @@ namespace buttons {
     //% group="Touch"
     //% block="$this hold duration (ms)"
     //% blockId=fwd_touch_hold_duration
-    fwdHoldDuration(): number { return this.holdDuration() }
+    fwdHoldDuration(): number { return super.holdDuration() }
 
     /**
      * Returns true if the button is currently pressed, otherwise false
@@ -30,9 +30,7 @@ namespace buttons {
     //% group="Touch"
     //% block="$this pressed"
     //% blockId=fwd_touch_is_pressed
-    fwdIsPressed(): boolean { return this.pressed() }
-
-
+    fwdIsPressed(): boolean { return super.pressed() }
   }
 
   //% fixedInstance whenUsed

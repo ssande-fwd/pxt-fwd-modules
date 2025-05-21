@@ -45,7 +45,7 @@ namespace lights {
     //% group="LED Lights"
     //% value.min=0 value.max=10 value.defl=10
     fwdSetBrightness(value: number): void {
-      this.setBrightness(this.toServiceBrightness(value))
+      super.setBrightness(this.toServiceBrightness(value))
     }
 
     /**
@@ -55,7 +55,7 @@ namespace lights {
     //% blockId=fwd_led_num_pixels
     //% group="LED Lights"
     fwdNumPixels(): number {
-      return this.numPixels();
+      return super.numPixels();
     }
 
     /**
@@ -65,7 +65,7 @@ namespace lights {
     //% blockId=fwd_led_get_brightness
     //% group="LED Lights"
     fwdBrightness(): number {
-      return this.toBlocksBrightness(this.brightness())
+      return this.toBlocksBrightness(super.brightness())
     }
 
     /**
@@ -76,7 +76,7 @@ namespace lights {
     //% block="set $this $index to $rgb=colorNumberPicker"
     //% blockId=fwd_led_set_single_pixel_colour
     //% group="LED Lights"
-    fwdSetPixelColour(index: PixelNames | number, rgb: number): void { this.setPixelColor(index, rgb) }
+    fwdSetPixelColour(index: PixelNames | number, rgb: number): void { super.setPixelColor(index, rgb) }
 
     /**
      * Set all LEDs to a color
@@ -85,7 +85,7 @@ namespace lights {
     //% block="set all $this LEDs to $rgb=colorNumberPicker"
     //% blockId=fwd_led_set_all_pixels_colour
     //% group="LED Lights"
-    fwdSetAllPixelsColour(rgb: number): void { this.setAll(rgb) }
+    fwdSetAllPixelsColour(rgb: number): void { super.setAll(rgb) }
 
     /**
      * Rotate the light pattern left or right, wrapping the last pixel back to the first
@@ -95,7 +95,7 @@ namespace lights {
     //% blockId=fwd_led_rotate_pattern
     //% group="LED Lights"
     //% offset.defl=1
-    fwdRotate(offset:number): void { this.rotate(offset) }
+    fwdRotate(offset:number): void { super.rotate(offset) }
 
     /**
      * Shift the light pattern left or right. If the light pattern is shifted past the first or last light, that part of the pattern is removed.
@@ -105,7 +105,7 @@ namespace lights {
     //% blockId=fwd_led_shift_pattern
     //% group="LED Lights"
     //% offset.defl=1
-    fwdShift(offset:number): void { this.shift(offset) }
+    fwdShift(offset:number): void { super.shift(offset) }
 
   }
 

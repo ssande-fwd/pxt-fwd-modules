@@ -20,7 +20,7 @@ namespace sensors {
     //% group="Line"
     //% block="$this state"
     //% blockId=fwd_line_sensor_state
-    fwdLineSensorState(): LineSensorState { return Math.round(this.brightness()/100) }
+    fwdLineSensorState(): LineSensorState { return Math.round(super.brightness()/100) }
 
     /**
      * Checks for a specific line sensor state
@@ -37,8 +37,7 @@ namespace sensors {
     //% group="Line"
     //% block="on $this state changes"
     //% blockId=fwd_line_sensor_on_state_change
-    fwdOnLineSensorStateChange( handler: () => void ): void { this.onReadingChangedBy( 0.50, handler ) }
-
+    fwdOnLineSensorStateChange( handler: () => void ): void { super.onReadingChangedBy( 0.50, handler ) }
   }
 
   //% fixedInstance

@@ -6,17 +6,16 @@ namespace modules {
      **/
     //% fixedInstances blockGap=8
     export class LightbulbClient extends jacdac.Client {
-        private readonly _brightness: jacdac.RegisterClient<[number]>;
+        private readonly _brightness: jacdac.RegisterClient<[number]>
 
         constructor(role: string) {
             super(jacdac.SRV_LIGHTS, role)
 
-            this._brightness = this.addRegister<[number]>(
+            this._brightness = super.addRegister<[number]>(
                 jacdac.LightsReg.Brightness,
                 jacdac.LightsRegPack.Brightness
-            );
+            )
         }
-
 
         /**
          * Indicates the brightness of the light bulb. Zero means completely off and 0xffff means completely on.
@@ -35,7 +34,7 @@ namespace modules {
                 return
             }
 
-            this.start()
+            super.start()
             const values = this._brightness.values as any[]
             values[0] = value / 100
             this._brightness.values = values as [number]

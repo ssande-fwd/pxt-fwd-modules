@@ -2,6 +2,7 @@ namespace sensors {
 
   //% fixedInstances
   export class FwdSolarClient extends modules.LightLevelClient {
+
     MAX_REPORT_BRIGHTNESS = 100
     MAX_SERVICE_BRIGHTNESS = 1
 
@@ -23,7 +24,7 @@ namespace sensors {
     //% group="Solar"
     //% block="$this light level (\\%)"
     //% blockId=fwd_solar_get_light_level
-    fwdLightLevel(): number { return this.lightLevel() }
+    fwdLightLevel(): number { return super.lightLevel() }
 
     /**
      * Runs code when the light level changes by more than a certain amount between readings
@@ -33,7 +34,7 @@ namespace sensors {
     //% block="on $this light level changed by $threshold (\\%)"
     //% blockId=fwd_solar_on_light_level_changed
     //% threshold.min=0 threshold.max=100 threshold.defl=5
-    fwdOnLightLevelChangedBy(threshold: number, handler: () => void): void { this.onReadingChangedBy( this.toServiceBrightness(threshold), handler) }
+    fwdOnLightLevelChangedBy(threshold: number, handler: () => void): void { super.onReadingChangedBy( this.toServiceBrightness(threshold), handler) }
 
     /**
      * Runs code when the light level goes above or below a set threshold
@@ -45,7 +46,7 @@ namespace sensors {
     //% blockId=fwd_solar_is_light_level_past_threshold
     //% threshold.min=0 threshold.max=100 threshold.defl=5
     fwdIsLightLevelPastThreshold(threshold: number, direction: ThresholdDirection ): boolean {
-      const difference = this.lightLevel() - threshold > 0;
+      const difference = super.lightLevel() - threshold > 0;
       const isPastThreshold = 
         direction === ThresholdDirection.Over && difference ||
         direction === ThresholdDirection.Under && !difference;

@@ -24,7 +24,7 @@ namespace buttons {
       this._cwAction = (_) => {}
       this._ccwAction = (_) => {}
 
-      this.onReadingChangedBy(1, (delta: number) => {
+      super.onReadingChangedBy(1, (delta: number) => {
         if (delta < 0) {
           this._cwAction(delta)
         } else {
@@ -40,7 +40,7 @@ namespace buttons {
     //% block="$this clicks per full turn"
     //% rotaryencoder.defl=dial1
     //% blockId=fwd_dial_get_clicks_per_turn
-    fwdClicksPerTurn(): number { return this.clicksPerTurn() }
+    fwdClicksPerTurn(): number { return super.clicksPerTurn() }
     
     /**
      * The absolute position of the dial since it was last connected.
@@ -50,7 +50,7 @@ namespace buttons {
     //% group="Dial"
     //% block="$this absolute position"
     //% blockId=fwd_dial_get_position
-    fwdPosition(): number { return this.position() }
+    fwdPosition(): number { return super.position() }
 
     /**
      * Run code when the dial is turned in a specific direction
@@ -70,8 +70,6 @@ namespace buttons {
         this._ccwAction = handler
       }
     }
-
-    
   }
 
   //% fixedInstance whenUsed
@@ -115,8 +113,6 @@ namespace buttons {
     //% block="$this pressed"
     //% blockId=fwd_dial_is_pressed
     fwdIsPressed(): boolean { return super.pressed() }
-
-
   }
 
   //% fixedInstance whenUsed

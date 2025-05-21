@@ -1,3 +1,3 @@
 input.onButtonPressed(Button.A, function () {
-    console.log(sensors.temp1.fwdTemperature())
+    console.log(sensors.temperature1.fwdTemperature())
 })

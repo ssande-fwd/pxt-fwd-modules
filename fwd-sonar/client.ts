@@ -13,7 +13,7 @@ namespace sensors {
     //% group="Sonar"
     //% block="$this distance (m)"
     //% blockId=fwd_sonar_get_distance
-    fwdDistance(): number { return this.distance() }
+    fwdDistance(): number { return super.distance() }
 
     /**
      * Runs code when the distance changes by more than a certain amount between readings
@@ -23,7 +23,7 @@ namespace sensors {
     //% block="on $this distance changed by $threshold m"
     //% blockId=fwd_sonar_on_distance_change
     fwdOnDistanceChangedBy(threshold: number, handler: () => void): void {
-      this.onReadingChangedBy(threshold, handler)
+      super.onReadingChangedBy(threshold, handler)
     }
 
     /**
@@ -35,7 +35,7 @@ namespace sensors {
     //% block="$this distance is $direction $threshold m"
     //% blockId=fwd_solar_is_distance_past_threshold
     fwdDistancePastThreshold(threshold: number, direction: ThresholdDirection ): boolean {
-      const difference = this.distance() - threshold > 0;
+      const difference = super.distance() - threshold > 0;
       const isPastThreshold = 
         direction === ThresholdDirection.Over && difference ||
         direction === ThresholdDirection.Under && !difference;
