@@ -16,17 +16,6 @@ namespace sensors {
         }
 
         /**
-         * Runs code when the distance changes by more than a certain amount between readings
-         * @param threshold how many percent two readings have to differ by before code is run
-         */
-        //% group="Sonar"
-        //% block="on $this distance changed by $threshold m"
-        //% blockId=fwd_sonar_on_distance_change
-        fwdOnDistanceChangedBy(threshold: number, handler: () => void): void {
-            super.onReadingChangedBy(threshold, handler)
-        }
-
-        /**
          * Runs code when the distance goes over or under a set threshold
          * @param threshold what distance is the cut off before the code is run
          * @param direction run when the distance is over or under your set threshold

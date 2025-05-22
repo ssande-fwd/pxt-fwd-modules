@@ -16,21 +16,6 @@ namespace sensors {
         }
 
         /**
-         * Runs code when the moisture level changes by more than a certain amount between readings
-         * @param threshold how many percent two readings have to differ by before code is run
-         */
-        //% group="Moisture"
-        //% block="on $this level changed by $threshold (\\%)"
-        //% blockId=fwd_moisture_on_level_change
-        //% threshold.min=1 threshold.max=100 threshold.defl=5
-        fwdOnMoistureLevelChangedBy(
-            threshold: number,
-            handler: () => void
-        ): void {
-            super.onMoistureChangedBy(threshold, handler)
-        }
-
-        /**
          * Runs code when the moisture level goes above or below a set threshold
          * @param threshold what moisture level is the cut off before the code is run
          * @param direction run when the level is above or below your set threshold

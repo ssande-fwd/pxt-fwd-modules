@@ -14,20 +14,6 @@ namespace sensors {
         fwdTemperature(): number {
             return super.temperature()
         }
-
-        /**
-         * ${getDescription('temperature')}
-         * @param threshold how many percent two readings have to differ by before code is run
-         */
-        //% group="Temperature Probe"
-        //% block="on $this temperature changed by $threshold °C"
-        //% blockId=fwd_temperature_on_change
-        fwdOnTemperatureChangedBy(
-            threshold: number,
-            handler: () => void
-        ): void {
-            super.onReadingChangedBy(threshold, handler)
-        }
     }
 
     //% fixedInstance whenUsed
@@ -38,8 +24,4 @@ namespace sensors {
     export const temperature3 = new FwdTemperatureClient("temperature3")
     //% fixedInstance whenUsed
     export const temperature4 = new FwdTemperatureClient("temperature4")
-}
-
-function getDescription(thing: string): string {
-    return `Runs code when the ${thing} changes by more than a certain amount between readings`
 }
