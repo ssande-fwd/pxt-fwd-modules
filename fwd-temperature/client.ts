@@ -6,13 +6,27 @@ namespace sensors {
         }
 
         /**
-         * Returns the sensor's distance reading in meters
+         * Returns the sensor's temperature reading in °C.
          */
         //% group="Temperature Probe"
         //% block="$this °C"
         //% blockId=fwd_temperature_get_temperature
         fwdTemperature(): number {
             return super.temperature()
+        }
+
+        /**
+         * Runs code when the temperature changes by more than a certain amount between readings
+         * @param threshold how many percent two readings have to differ by before code is run
+         */
+        //% group="Temperature Probe"
+        //% block="on $this distance changed by $threshold m"
+        //% blockId=fwd_temperature_on_temperature_change
+        fwdOnTemperatureChangedBy(
+            threshold: number,
+            handler: () => void
+        ): void {
+            super.onReadingChangedBy(threshold, handler)
         }
     }
 
