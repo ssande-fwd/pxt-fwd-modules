@@ -16,15 +16,15 @@ namespace motors {
         }
 
         /**
-         * Set the pump to either running or stopped.
-         * @param state running = true, stopped = false
+         * Turn the pump on or off.
+         * @param on on = true, off = false
          */
         //% group="Pump"
-        //% block="set $this $state"
-        //% blockId=fwd_pump_set_active
-        //% state.shadow="toggleOnOff"
-        setActive(state: boolean): void {
-            super.setActive(state)
+        //% block="set $this $on"
+        //% blockId=fwd_pump_set_on
+        //% on.shadow="toggleOnOff"
+        setOn(on: boolean): void {
+            super.setActive(on)
         }
 
         /**
@@ -54,33 +54,22 @@ namespace motors {
         }
 
         /**
-         * Reports the servo's total range of motion in degrees
-         */
-        //% group="Servo (270° Positional)"
-        //% block="$this angle range (°)"
-        //% blockId=fwd_servo_get_angle_range
-        get angleRange(): number {
-            return super.maxAngle() - super.minAngle()
-        }
-
-        /**
          * Reports what angle the servo is set to
          */
-        //% group="Servo (270° Positional)"
+        //% group="Servo (270° positional)"
         //% block="$this angle (°)"
         //% blockId=fwd_servo_get_angle
-        fwdGetAngle(): number {
+        getAngle(): number {
             return super.angle()
         }
 
         /**
-         * Set what angle the servo should point to, and immediately run the next block
+         * Set what angle the servo should point to and immediately run the next block
          * @param angle servo angle
          */
-        //% group="Servo (270° Positional)"
+        //% group="Servo (270° positional)"
         //% block="set $this to $angle °"
         //% blockId=fwd_servo_set_angle
-        //% angle.shadow="protractorPicker"
         //% angle.min=0 angle.max=270
         setAngle(angle: number): void {
             super.setAngle(angle)
@@ -90,27 +79,28 @@ namespace motors {
          * Set what angle the servo should point to, and wait for the movement to finish before running the next block
          * @param angle servo angle
          */
-        //% group="Servo (270° Positional)"
-        //% block="set $this to $target ° and wait"
+        //% group="Servo (270° positional)"
+        //% block="set $this to $angle ° and wait"
         //% blockId=fwd_servo_set_angle_and_wait
-        //% target.shadow="protractorPicker"
-        //% target.min=-90 target.max=90
-        setAngleAndWait(target: number): void {
-            let maxPauseDuration =
-                (super.responseSpeed() / 60) * this.angleRange + 20 || 380
-            let travelDistance = Math.abs(
-                this.fwdGetAngle() > target
-                    ? this.fwdGetAngle() - target
-                    : target - this.fwdGetAngle()
+        //% angle.min=0 angle.max=270
+        setAngleAndWait(angle: number): void {
+            let maxPauseDuration = (super.responseSpeed() / 60) * 270 + 20 || 380
+            let degreesToMove = Math.abs(
+                this.getAngle() > angle
+                    ? this.getAngle() - angle
+                    : angle - this.getAngle()
             )
-            super.setAngle(target)
-            basic.pause((maxPauseDuration * travelDistance) / this.angleRange)
+            super.setAngle(angle)
+
+            // it takes maxPauseDuration seconds to move 270 degrees
+            // with degreesToMove as the second denominator, cross-multiply and divide to get the pause needed
+            basic.pause((maxPauseDuration * degreesToMove) / 270)
         }
 
         /**
          * Is the servo enabled or disabled? Enabled = true, disabled = false
          */
-        //% group="Servo (Both)"
+        //% group="Servo (both)"
         //% block="$this state"
         //% blockId=fwd_servo_is_enabled
         isEnabled(): boolean {
@@ -121,7 +111,7 @@ namespace motors {
          * Set the servo to enabled or disabled
          * @param state enabled = true, disabled = false
          */
-        //% group="Servo (Both)"
+        //% group="Servo (both)"
         //% block="set $this $state"
         //% blockId=fwd_servo_set_enabled
         //% state.shadow="toggleOnOff"
@@ -132,7 +122,7 @@ namespace motors {
         /**
          * Reports what speed the servo is set to
          */
-        //% group="Servo (Continuous)"
+        //% group="Servo (continuous)"
         //% block="$this speed (\\%)"
         //% blockId=fwd_servo_get_speed
         getSpeed(): number {
@@ -149,10 +139,9 @@ namespace motors {
          * Set what speed the servo should run at
          * @param speed Can be set between 100% foward and -100% reverse
          */
-        //% group="Servo (Continuous)"
+        //% group="Servo (continuous)"
         //% block="set $this $speed \\%"
-        //% blockId=fwd_servo_continuous_set_speed
-        //% speed.shadow="speedPicker"
+        //% blockId=fwd_servo_set_speed
         //% speed.min=-100 speed.max=100
         setSpeed(speed: number): void {
             this.setAngle(
@@ -163,31 +152,31 @@ namespace motors {
 
     export const enum PresetServoPosition {
         //% block="🕛 00:00"
-        Pos0 = 0,
+        Pos0 = 270,
         //% block="🕐 01:00"
-        Pos1 = 30,
+        Pos1 = 240,
         //% block="🕑 02:00"
-        Pos2 = 60,
+        Pos2 = 210,
         //% block="🕒 03:00"
-        Pos3 = 90,
+        Pos3 = 180,
         //% block="🕓 04:00"
-        Pos4 = 120,
+        Pos4 = 150,
         //% block="🕔 05:00"
-        Pos5 = 150,
+        Pos5 = 120,
         //% block="🕕 06:00"
-        Pos6 = 180,
+        Pos6 = 90,
         //% block="🕖 07:00"
-        Pos7 = 210,
+        Pos7 = 60,
         //% block="🕗 08:00"
-        Pos8 = 240,
+        Pos8 = 30,
         //% block="🕘 09:00"
-        Pos9 = 270,
+        Pos9 = 0,
     }
 
     /**
      * Preset servo positions based on a clock's hour hand
      */
-    //% group="Servo (270° Positional)"
+    //% group="Servo (270° positional)"
     //% block="position %position"
     //% blockId=fwd_servo_position_enum
     //% position.defl=0
