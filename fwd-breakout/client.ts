@@ -1,17 +1,17 @@
 namespace motors {
     //% fixedInstances
-    export class FwdRelayClient extends modules.RelayClient {
+    export class FwdPumpClient extends modules.RelayClient {
         constructor(role: string) {
             super(role)
         }
 
         /**
-         * Returns true if the pump is running and false if it is stopped.
+         * Returns true if the pump is running and false if it's stopped.
          */
         //% group="Pump"
-        //% block="$this active"
-        //% blockId=fwd_relay_is_active
-        isActive(): boolean {
+        //% block="$this on"
+        //% blockId=fwd_pump_is_on
+        isOn(): boolean {
             return super.active()
         }
 
@@ -21,7 +21,7 @@ namespace motors {
          */
         //% group="Pump"
         //% block="set $this $state"
-        //% blockId=fwd_relay_set_active
+        //% blockId=fwd_pump_set_active
         //% state.shadow="toggleOnOff"
         setActive(state: boolean): void {
             super.setActive(state)
@@ -33,19 +33,19 @@ namespace motors {
          */
         //% group="Pump"
         //% block="run $this for $duration s"
-        //% duration.dfl=1 duration.min=1 duration.max=5
-        //% blockId=fwd_relay_timed_run
+        //% duration.defl=1 duration.min=1 duration.max=5
+        //% blockId=fwd_pump_timed_run
         timedRun(duration: number): void {
             control.inBackground(() => {
                 super.setActive(true)
-                basic.pause(duration)
+                basic.pause(duration * 1000)
                 super.setActive(false)
             })
         }
     }
 
     //% fixedInstance
-    export const pump = new FwdRelayClient("pump")
+    export const pump = new FwdPumpClient("pump")
 
     //% fixedInstances
     export class FwdServoClient extends modules.ServoClient {
