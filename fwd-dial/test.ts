@@ -1,26 +1,24 @@
 // rotary encoder tests
-// fwdPosition()
-// fwdOnDialTurned(direction: DialDirection, handler: () => void): void
-buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CW, () =>
-    console.log("turned -> position " + buttons.dial1.fwdPosition())
+// position()
+// onRotated(direction: DialDirection, handler: () => void): void
+buttons.dial1.onRotated(buttons.DialDirection.CW, () =>
+    console.log("turned -> position " + buttons.dial1.position())
 )
-buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CCW, () =>
-    console.log("turned <- position " + +buttons.dial1.fwdPosition())
+buttons.dial1.onRotated(buttons.DialDirection.CCW, () =>
+    console.log("turned <- position " + +buttons.dial1.position())
 )
 
 // button tests
-// fwdOnPress(event: jacdac.ButtonEvent, handler: () => void)
-// fwdHoldDuration(): number
-// fwdIsPressed(): boolean
-buttons.dialButton1.fwdOnPress(jacdac.ButtonEvent.Down, () =>
+// onEvent(event: jacdac.ButtonEvent, handler: () => void)
+// holdDuration(): number
+// isPressed(): boolean
+console.log("Button Pressed? " + buttons.dialButton1.isPressed())
+buttons.dialButton1.onEvent(jacdac.ButtonEvent.Down, () =>
     console.log("dialdown")
 )
-buttons.dialButton1.fwdOnPress(jacdac.ButtonEvent.Up, () =>
+buttons.dialButton1.onEvent(jacdac.ButtonEvent.Up, () =>
     console.log("dialup")
 )
-basic.forever(function () {
-    if (buttons.dialButton1.fwdIsPressed()) {
-        console.log(buttons.dialButton1.fwdHoldDuration())
-        basic.pause(250)
-    }
-})
+buttons.dialButton1.onEvent(jacdac.ButtonEvent.Hold, () =>
+    console.log("Hold Duration: " + buttons.dialButton1.holdDuration())
+)

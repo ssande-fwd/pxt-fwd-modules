@@ -6,9 +6,6 @@ namespace buttons {
         CCW,
     }
 
-    /**
-     * Wrapper for FWD Edu rotary encoder, aka "Dial"
-     **/
     //% fixedInstances
     export class FwdDialClient extends modules.RotaryEncoderClient {
         private _cwAction: () => void
@@ -32,27 +29,26 @@ namespace buttons {
         }
 
         /**
-         * The absolute position of the dial since it was last connected.
-         * Positive numbers are clockwise, negative are counter-clockwise. Zero is the starting position.
-         * This number reflects the sum of all movements, so three steps clockwise followed by five counter-clockwise will read -1 (includes zero as a position)
+         * The position of the dial relative to it's starting position when it was connected.
+         * 0 is the starting position. A clockwise click is +1. A counterclockwise click is -1.
+         * It does not reset to 0 after 1 full rotation. Instead it continues to increment.
          */
         //% group="Dial"
-        //% block="$this absolute position"
-        //% blockId=fwd_dial_get_position
-        fwdPosition(): number {
+        //% block="$this position"
+        //% blockId=fwd_dial_position
+        position(): number {
             return super.position()
         }
 
         /**
-         * Run code when the dial is turned in a specific direction
-         * @param direction choose between clockwise and counter-clockwise
+         * Run code when the dial is rotated in the chosen direction.
+         * @param direction choose between clockwise (CW) and counterclockwise (CCW)
          */
-        //% draggableParameters="reporter"
         //% group="Dial"
-        //% block="on $this turned $direction"
-        //% blockId=fwd_dial_on_dial_turned
+        //% block="on $this rotated $direction"
+        //% blockId=fwd_dial_on_rotated
         //% weight=98
-        fwdOnDialTurned(direction: DialDirection, handler: () => void): void {
+        onRotated(direction: DialDirection, handler: () => void): void {
             if (direction === DialDirection.CW) {
                 this._cwAction = handler
             } else {
@@ -77,13 +73,13 @@ namespace buttons {
         }
 
         /**
-         * Code to run when a chosen event occurs
-         * @param event Button pressed (down), held, released (up)
+         * Code to run when the chosen event occurs. The hold event fires every 100ms that the button is held.
+         * @param event button down, hold, or up
          */
         //% group="Dial"
         //% block="on $this $event"
-        //% blockId=fwd_dial_on_press
-        fwdOnPress(event: jacdac.ButtonEvent, handler: () => void) {
+        //% blockId=fwd_dialbutton_on_event
+        onEvent(event: jacdac.ButtonEvent, handler: () => void) {
             super.onEvent(event, handler)
         }
 
@@ -92,18 +88,18 @@ namespace buttons {
          */
         //% group="Dial"
         //% block="$this hold duration (ms)"
-        //% blockId=fwd_dial_hold_duration
-        fwdHoldDuration(): number {
+        //% blockId=fwd_dialbutton_hold_duration
+        holdDuration(): number {
             return super.holdDuration()
         }
 
         /**
-         * Returns true if the button is currently pressed, otherwise false
+         * Returns true if the button is currently pressed, otherwise false.
          */
         //% group="Dial"
         //% block="$this pressed"
-        //% blockId=fwd_dial_is_pressed
-        fwdIsPressed(): boolean {
+        //% blockId=fwd_dialbutton_is_pressed
+        isPressed(): boolean {
             return super.pressed()
         }
     }
