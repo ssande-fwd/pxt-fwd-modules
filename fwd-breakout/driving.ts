@@ -23,8 +23,8 @@ namespace motors {
 
         function drive(direction: -1 | 1, speed: number): void {
             if (!enabled) return
-            leftMotor.fwdSetSpeed(direction * speed * leftBias)
-            rightMotor.fwdSetSpeed(-direction * speed * rightBias) //motors are mounted opposite directions
+            leftMotor.setSpeed(direction * speed * leftBias)
+            rightMotor.setSpeed(-direction * speed * rightBias) //motors are mounted opposite directions
         }
 
         function turnInPlace(angle: number): void {
@@ -32,11 +32,11 @@ namespace motors {
             // angle is how far to turn. Neg: left, Pos: right.
             const DEG_PER_SEC = 30 // magic number, determined by testing
             const direction = angle > 0 ? 1 : -1
-            leftMotor.fwdSetSpeed(60 * direction * leftBias)
-            rightMotor.fwdSetSpeed(60 * direction * rightBias)
+            leftMotor.setSpeed(60 * direction * leftBias)
+            rightMotor.setSpeed(60 * direction * rightBias)
             basic.pause((Math.abs(angle) / DEG_PER_SEC) * 1000)
-            leftMotor.fwdSetSpeed(0)
-            rightMotor.fwdSetSpeed(0)
+            leftMotor.setSpeed(0)
+            rightMotor.setSpeed(0)
         }
 
         return {

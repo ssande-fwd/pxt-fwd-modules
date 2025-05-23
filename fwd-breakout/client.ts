@@ -1,7 +1,4 @@
 namespace motors {
-    /**
-     * The pump is an on-board relay
-     */
     //% fixedInstances
     export class FwdRelayClient extends modules.RelayClient {
         constructor(role: string) {
@@ -9,36 +6,36 @@ namespace motors {
         }
 
         /**
-         * The current state of the pump. true = running
+         * Returns true if the pump is running and false if it is stopped.
          */
         //% group="Pump"
         //% block="$this active"
-        //% blockId=fwd_relay_get_status
-        fwdIsActive(): boolean {
+        //% blockId=fwd_relay_is_active
+        isActive(): boolean {
             return super.active()
         }
 
         /**
-         * Set the pump to either running or stopped
+         * Set the pump to either running or stopped.
          * @param state running = true, stopped = false
          */
         //% group="Pump"
         //% block="set $this $state"
-        //% blockId=fwd_relay_set_status
+        //% blockId=fwd_relay_set_active
         //% state.shadow="toggleOnOff"
-        fwdSetActive(state: boolean): void {
+        setActive(state: boolean): void {
             super.setActive(state)
         }
 
         /**
-         * Turn the pump on and have it run in the background before turning off.
-         * @param duration how long the pump should run for before turning itself off
+         * Turn on the pump for the chosen number of seconds.
+         * @param duration how long to run the pump
          */
         //% group="Pump"
-        //% block="run $this for $duration"
+        //% block="run $this for $duration s"
+        //% duration.dfl=1 duration.min=1 duration.max=5
         //% blockId=fwd_relay_timed_run
-        //% duration.shadow="timePicker"
-        fwdTimedRun(duration: number): void {
+        timedRun(duration: number): void {
             control.inBackground(() => {
                 super.setActive(true)
                 basic.pause(duration)
@@ -50,8 +47,6 @@ namespace motors {
     //% fixedInstance
     export const pump = new FwdRelayClient("pump")
 
-    /**
-     */
     //% fixedInstances
     export class FwdServoClient extends modules.ServoClient {
         constructor(role: string) {
@@ -87,7 +82,7 @@ namespace motors {
         //% blockId=fwd_servo_set_angle
         //% angle.shadow="protractorPicker"
         //% angle.min=0 angle.max=270
-        fwdSetAngle(angle: number): void {
+        setAngle(angle: number): void {
             super.setAngle(angle)
         }
 
@@ -100,7 +95,7 @@ namespace motors {
         //% blockId=fwd_servo_set_angle_and_wait
         //% target.shadow="protractorPicker"
         //% target.min=-90 target.max=90
-        fwdSetAngleAndWait(target: number): void {
+        setAngleAndWait(target: number): void {
             let maxPauseDuration =
                 (super.responseSpeed() / 60) * this.angleRange + 20 || 380
             let travelDistance = Math.abs(
@@ -118,7 +113,7 @@ namespace motors {
         //% group="Servo (Both)"
         //% block="$this state"
         //% blockId=fwd_servo_is_enabled
-        fwdIsEnabled(): boolean {
+        isEnabled(): boolean {
             return this.enabled()
         }
 
@@ -130,7 +125,7 @@ namespace motors {
         //% block="set $this $state"
         //% blockId=fwd_servo_set_enabled
         //% state.shadow="toggleOnOff"
-        fwdSetEnabled(state: boolean): void {
+        setEnabled(state: boolean): void {
             return this.setEnabled(state)
         }
 
@@ -140,7 +135,7 @@ namespace motors {
         //% group="Servo (Continuous)"
         //% block="$this speed (\\%)"
         //% blockId=fwd_servo_get_speed
-        fwdGetSpeed(): number {
+        getSpeed(): number {
             return Math.map(
                 this.angle(),
                 this.minAngle(),
@@ -159,7 +154,7 @@ namespace motors {
         //% blockId=fwd_servo_continuous_set_speed
         //% speed.shadow="speedPicker"
         //% speed.min=-100 speed.max=100
-        fwdSetSpeed(speed: number): void {
+        setSpeed(speed: number): void {
             this.setAngle(
                 Math.map(speed, -100, 100, this.minAngle(), this.maxAngle())
             )
@@ -196,7 +191,7 @@ namespace motors {
     //% block="position %position"
     //% blockId=fwd_servo_position_enum
     //% position.defl=0
-    export function fwdPositionPresets(position: PresetServoPosition): number {
+    export function positionPresets(position: PresetServoPosition): number {
         return position as number
     }
 

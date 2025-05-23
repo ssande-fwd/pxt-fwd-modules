@@ -8,6 +8,15 @@
         "jacdac-servo": "github:microsoft/pxt-jacdac/servo",
         "jacdac-relay": "github:microsoft/pxt-jacdac/relay"
     },
-    "files": ["client.ts", "driving.ts"],
-    "supportedTargets": ["microbit"]
+    "files": [
+        "client.ts",
+        "driving.ts"
+    ],
+    "targetVersions": {
+        "target": "7.0.61",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ]
 }
