@@ -11,22 +11,22 @@ namespace buttons {
      **/
     //% fixedInstances
     export class FwdDialClient extends modules.RotaryEncoderClient {
-        private _cwAction: (delta: number) => void
-        private _ccwAction: (delta: number) => void
+        private _cwAction: () => void
+        private _ccwAction: () => void
 
         constructor(role: string) {
             super(role)
 
-            this._cwAction = _ => {}
-            this._ccwAction = _ => {}
+            this._cwAction = () => {}
+            this._ccwAction = () => {}
 
-            // this sets up the functions to run when the dial is turned for a given direction
-            // initially the functions are blank, they get assigned by fwdOnDialTurned()
+            // this sets up the functions to run when the dial is turned clockwise or counterclockwise
+            // initially the functions are blank, they get assigned by the makecode program through fwdOnDialTurned()
             super.onReadingChangedBy(1, (delta: number) => {
                 if (delta < 0) {
-                    this._cwAction(delta)
+                    this._cwAction()
                 } else {
-                    this._ccwAction(delta)
+                    this._ccwAction()
                 }
             })
         }
@@ -46,17 +46,13 @@ namespace buttons {
         /**
          * Run code when the dial is turned in a specific direction
          * @param direction choose between clockwise and counter-clockwise
-         * @param difference the number of dial positions turned since the last update
          */
         //% draggableParameters="reporter"
         //% group="Dial"
-        //% block="on $this turned by $direction $difference"
+        //% block="on $this turned $direction"
         //% blockId=fwd_dial_on_dial_turned
         //% weight=98
-        fwdOnDialTurned(
-            direction: DialDirection,
-            handler: (difference: number) => void
-        ): void {
+        fwdOnDialTurned(direction: DialDirection, handler: () => void): void {
             if (direction === DialDirection.CW) {
                 this._cwAction = handler
             } else {

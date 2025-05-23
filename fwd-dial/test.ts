@@ -1,12 +1,17 @@
 // rotary encoder tests
-buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CW, difference =>
+// fwdPosition()
+// fwdOnDialTurned(direction: DialDirection, handler: () => void): void
+buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CW, () =>
     console.log("turned -> position " + buttons.dial1.fwdPosition())
 )
-buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CCW, difference =>
+buttons.dial1.fwdOnDialTurned(buttons.DialDirection.CCW, () =>
     console.log("turned <- position " + +buttons.dial1.fwdPosition())
 )
 
 // button tests
+// fwdOnPress(event: jacdac.ButtonEvent, handler: () => void)
+// fwdHoldDuration(): number
+// fwdIsPressed(): boolean
 buttons.dialButton1.fwdOnPress(jacdac.ButtonEvent.Down, () =>
     console.log("dialdown")
 )
