@@ -9,5 +9,6 @@
         "jacdac-dc-voltage": "github:microsoft/pxt-jacdac/dc-voltage-measurement"
     },
     "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "supportedTargets": ["microbit"]
 }

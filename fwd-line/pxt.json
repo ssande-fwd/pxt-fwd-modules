@@ -8,5 +8,6 @@
         "jacdac-reflected-light": "github:microsoft/pxt-jacdac/reflected-light"
     },
     "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "supportedTargets": ["microbit"]
 }

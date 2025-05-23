@@ -8,5 +8,6 @@
         "jacdac-distance": "github:microsoft/pxt-jacdac/distance"
     },
     "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "supportedTargets": ["microbit"]
 }

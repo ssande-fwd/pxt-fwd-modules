@@ -8,5 +8,6 @@
         "jacdac-button": "github:microsoft/pxt-jacdac/button"
     },
     "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "supportedTargets": ["microbit"]
 }

@@ -8,5 +8,6 @@
         "jacdac-light-level": "github:microsoft/pxt-jacdac/light-level"
     },
     "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "supportedTargets": ["microbit"]
 }
