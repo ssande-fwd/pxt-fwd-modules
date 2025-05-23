@@ -20,6 +20,8 @@ namespace buttons {
             this._cwAction = _ => {}
             this._ccwAction = _ => {}
 
+            // this sets up the functions to run when the dial is turned for a given direction
+            // initially the functions are blank, they get assigned by fwdOnDialTurned()
             super.onReadingChangedBy(1, (delta: number) => {
                 if (delta < 0) {
                     this._cwAction(delta)
@@ -27,17 +29,6 @@ namespace buttons {
                     this._ccwAction(delta)
                 }
             })
-        }
-
-        /**
-         * The number of steps that make up a full turn of the dial
-         */
-        //% group="Dial"
-        //% block="$this clicks per full turn"
-        //% rotaryencoder.defl=dial1
-        //% blockId=fwd_dial_get_clicks_per_turn
-        fwdClicksPerTurn(): number {
-            return super.clicksPerTurn()
         }
 
         /**
