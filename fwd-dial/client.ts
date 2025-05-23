@@ -84,7 +84,7 @@ namespace buttons {
         }
 
         /**
-         * Returns the ms duration of the last button hold in ms
+         * Returns how long the button has been held in ms.
          */
         //% group="Dial"
         //% block="$this hold duration (ms)"
