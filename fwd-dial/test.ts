@@ -12,7 +12,7 @@ buttons.dial1.onRotated(buttons.DialDirection.CCW, () =>
 // onEvent(event: jacdac.ButtonEvent, handler: () => void)
 // holdDuration(): number
 // isPressed(): boolean
-console.log("Button Pressed? " + buttons.dialButton1.isPressed())
+console.log("Button pressed? " + buttons.dialButton1.isPressed())
 buttons.dialButton1.onEvent(jacdac.ButtonEvent.Down, () =>
     console.log("dialdown")
 )
