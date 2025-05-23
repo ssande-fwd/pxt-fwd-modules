@@ -1,4 +1,4 @@
-// rotary encoder tests
+// dial tests
 // position()
 // onRotated(direction: DialDirection, handler: () => void): void
 buttons.dial1.onRotated(buttons.DialDirection.CW, () =>
@@ -16,9 +16,7 @@ console.log("Button Pressed? " + buttons.dialButton1.isPressed())
 buttons.dialButton1.onEvent(jacdac.ButtonEvent.Down, () =>
     console.log("dialdown")
 )
-buttons.dialButton1.onEvent(jacdac.ButtonEvent.Up, () =>
-    console.log("dialup")
-)
+buttons.dialButton1.onEvent(jacdac.ButtonEvent.Up, () => console.log("dialup"))
 buttons.dialButton1.onEvent(jacdac.ButtonEvent.Hold, () =>
     console.log("Hold Duration: " + buttons.dialButton1.holdDuration())
 )
