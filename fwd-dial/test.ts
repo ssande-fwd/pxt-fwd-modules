@@ -16,5 +16,6 @@ buttons.dialButton1.fwdOnPress(jacdac.ButtonEvent.Up, () =>
 basic.forever(function () {
     if (buttons.dialButton1.fwdIsPressed()) {
         console.log(buttons.dialButton1.fwdHoldDuration())
+        basic.pause(500)
     }
 })
