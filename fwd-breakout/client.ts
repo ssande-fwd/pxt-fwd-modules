@@ -104,7 +104,7 @@ namespace motors {
         //% block="$this state"
         //% blockId=fwd_servo_is_enabled
         isEnabled(): boolean {
-            return this.enabled()
+            return super.enabled()
         }
 
         /**
@@ -116,7 +116,7 @@ namespace motors {
         //% blockId=fwd_servo_set_enabled
         //% state.shadow="toggleOnOff"
         setEnabled(state: boolean): void {
-            return this.setEnabled(state)
+            return super.setEnabled(state)
         }
 
         /**
