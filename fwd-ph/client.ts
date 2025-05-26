@@ -12,12 +12,12 @@ namespace sensors {
         }
 
         /**
-         * Returns the sensor's pH reading
+         * Returns the sensor's pH reading.
          */
         //% group="pH"
         //% block="$this pH"
         //% blockId=fwd_ph_get_ph
-        fwdPh(): number {
+        ph(): number {
             if (this.calibrated) {
                 const slope =
                     (this.standard2 - this.standard1) /
@@ -32,7 +32,8 @@ namespace sensors {
         }
 
         /**
-         * Generates linear calibration and saves slope and y-intercept for future readings
+         * Calibrates the pH probe against 2 solutions with a known pH for accurate readings.
+         * The calibration will not apply to the live value displayed in MakeCode when the Micro:bit is connected.
          * @param standard1
          * @param reading1
          * @param standard2
@@ -40,9 +41,9 @@ namespace sensors {
          */
         //% group="pH"
         //% block="Calibrate $this measures $standard1 as $reading1 measures $standard2 as $reading2"
-        //% blockId=fwd_ph_calibration
+        //% blockId=fwd_ph_calibrate
         //% inlineInputMode=external
-        fwdPhCalibrate(
+        calibrate(
             standard1: number,
             reading1: number,
             standard2: number,
@@ -53,6 +54,25 @@ namespace sensors {
             this.standard2 = standard2
             this.reading2 = reading2
             this.calibrated = true
+        }
+
+        /**
+         * Returns true when the pH is past the provided threshold in the designated direction.
+         * @param threshold what pH to check against
+         * @param direction over or under the threshold
+         */
+        //% group="pH"
+        //% block="$this pH is $direction $threshold (\\pH)"
+        //% blockId=fwd_ph_is_past_threshold
+        isPastThreshold(
+            threshold: number,
+            direction: ThresholdDirection
+        ): boolean {
+            const difference = this.ph() - threshold > 0
+            const isPastThreshold =
+                (direction === ThresholdDirection.Over && difference) ||
+                (direction === ThresholdDirection.Under && !difference)
+            return isPastThreshold
         }
     }
 

@@ -1,5 +1,5 @@
 // temperature(): number
-// isTemperaturePastThreshold(threshold: number, direction: ThresholdDirection): boolean
+// isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
 console.log("temperature: " + sensors.temperature1.temperature())
 basic.forever(function () {
     if (
