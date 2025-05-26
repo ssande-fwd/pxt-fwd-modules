@@ -11,8 +11,8 @@ namespace buttons {
          */
         //% group="Touch"
         //% block="on $this $event"
-        //% blockId=fwd_touch_on_touch
-        fwdOnTouch(event: jacdac.ButtonEvent, handler: () => void) {
+        //% blockId=fwd_touch_on_event
+        onEvent(event: jacdac.ButtonEvent, handler: () => void) {
             super.onEvent(event, handler)
         }
 
@@ -22,7 +22,7 @@ namespace buttons {
         //% group="Touch"
         //% block="$this hold duration (ms)"
         //% blockId=fwd_touch_hold_duration
-        fwdHoldDuration(): number {
+        holdDuration(): number {
             return super.holdDuration()
         }
 
@@ -32,7 +32,7 @@ namespace buttons {
         //% group="Touch"
         //% block="$this pressed"
         //% blockId=fwd_touch_is_pressed
-        fwdIsPressed(): boolean {
+        isPressed(): boolean {
             return super.pressed()
         }
     }
