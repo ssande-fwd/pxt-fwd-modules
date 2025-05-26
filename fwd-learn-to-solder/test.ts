@@ -11,6 +11,7 @@ buttons.BTN1.onEvent(jacdac.ButtonEvent.Hold, () =>
 
 // light tests
 // setBrightness(value: number)
+lights.RED.setBrightness(0) // this line simply ensures the simulator pops up without having to press A
 input.onButtonPressed(Button.A, function () {
     console.log("Test Start")
     console.log(
