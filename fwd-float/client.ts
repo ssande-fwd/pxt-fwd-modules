@@ -1,9 +1,9 @@
 namespace sensors {
     export const enum FloatState {
         //% block="raised"
-        raised,
+        raised = 1,
         //% block="lowered"
-        lowered,
+        lowered = 0
     }
 
     //% fixedInstances
@@ -41,16 +41,16 @@ namespace sensors {
         }
 
         /**
-         * Returns the sensor state.
+         * Returns the sensor state, 1 is raised and 0 is lowered.
          */
         //% group="Float"
         //% block="$this state"
         //% blockId=fwd_float_state
-        floatState(): string {
+        floatState(): number {
             if (super.pressed()) {
-                return FloatState.raised.toString()
+                return FloatState.raised
             } else {
-                return FloatState.lowered.toString()
+                return FloatState.lowered
             }
         }
     }
