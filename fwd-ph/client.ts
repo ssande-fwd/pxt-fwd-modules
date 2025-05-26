@@ -40,7 +40,7 @@ namespace sensors {
          * @param reading2
          */
         //% group="pH"
-        //% block="Calibrate $this measures $standard1 as $reading1 measures $standard2 as $reading2"
+        //% block="Calibrate $this Measures $standard1 as $reading1 Measures $standard2 as $reading2"
         //% blockId=fwd_ph_calibrate
         //% inlineInputMode=external
         calibrate(
@@ -62,7 +62,7 @@ namespace sensors {
          * @param direction over or under the threshold
          */
         //% group="pH"
-        //% block="$this pH is $direction $threshold (\\pH)"
+        //% block="$this is $direction $threshold (\\pH)"
         //% blockId=fwd_ph_is_past_threshold
         isPastThreshold(
             threshold: number,
