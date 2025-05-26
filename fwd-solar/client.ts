@@ -38,7 +38,7 @@ namespace sensors {
          * @param direction over or under the threshold
          */
         //% group="Solar"
-        //% block="$this light level is $direction $threshold (\\%)"
+        //% block="$this is $direction $threshold (\\%)"
         //% blockId=fwd_solar_is_past_threshold
         //% threshold.min=0 threshold.max=100 threshold.defl=5
         isPastThreshold(

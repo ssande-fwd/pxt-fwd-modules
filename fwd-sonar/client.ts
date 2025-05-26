@@ -21,7 +21,7 @@ namespace sensors {
          * @param direction over or under the threshold
          */
         //% group="Sonar"
-        //% block="$this distance is $direction $threshold m"
+        //% block="$this is $direction $threshold m"
         //% blockId=fwd_solar_is_distance_past_threshold
         fwdDistancePastThreshold(
             threshold: number,

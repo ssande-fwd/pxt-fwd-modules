@@ -1,5 +1,6 @@
 // ph(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
+// calibrate(standard1: number, reading1: number, standard2: number, reading2: number): void
 console.log("ph: " + sensors.ph1.ph())
 basic.forever(function () {
     if (sensors.ph1.isPastThreshold(25, sensors.ThresholdDirection.Over)) {
@@ -9,4 +10,7 @@ basic.forever(function () {
         console.log(sensors.ph1.ph() + " is under 25°C")
     }
     basic.pause(1000)
+})
+input.onButtonPressed(Button.A, function () {
+    sensors.ph1.calibrate(4, 5, 7, 8)
 })
