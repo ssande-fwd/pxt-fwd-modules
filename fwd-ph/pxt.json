@@ -4,7 +4,7 @@
     "description": "FWD Edu pH",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#71a003ad6b1e31117af94d6e04ff864ea7ab4108",
         "jacdac-acidity": "github:microsoft/pxt-jacdac/acidity"
     },
     "files": ["client.ts"],
