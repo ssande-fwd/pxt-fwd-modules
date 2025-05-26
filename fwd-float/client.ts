@@ -13,12 +13,12 @@ namespace sensors {
         }
 
         /**
-         * Code to run when a chosen event occurs
+         * Code to run when the chosen event occurs.
          */
         //% group="Float"
         //% block="on $this $state"
-        //% blockId=fwd_float_on_changed
-        fwdOnFloatChange(state: FloatState, handler: () => void) {
+        //% blockId=fwd_float_on_change
+        onFloatChange(state: FloatState, handler: () => void) {
             if (state === FloatState.raised) {
                 super.onEvent(jacdac.ButtonEvent.Down, handler)
             } else if (state === FloatState.lowered) {
@@ -27,16 +27,30 @@ namespace sensors {
         }
 
         /**
-         * Returns true if the sensor is in the designated state
+         * Returns true if the sensor is in the designated state.
          */
         //% group="Float"
         //% block="$this is $state"
-        //% blockId=fwd_float_state
-        fwdFloatState(state: FloatState): boolean {
+        //% blockId=fwd_float_state_conditional
+        floatStateConditional(state: FloatState): boolean {
             if (state === FloatState.raised) {
                 return super.pressed()
             } else {
                 return !super.pressed()
+            }
+        }
+
+        /**
+         * Returns the sensor state.
+         */
+        //% group="Float"
+        //% block="$this state"
+        //% blockId=fwd_float_state
+        floatState(): string {
+            if (super.pressed()) {
+                return FloatState.raised.toString()
+            } else {
+                return FloatState.lowered.toString()
             }
         }
     }
