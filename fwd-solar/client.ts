@@ -28,20 +28,20 @@ namespace sensors {
         //% group="Solar"
         //% block="$this light level (\\%)"
         //% blockId=fwd_solar_get_light_level
-        fwdLightLevel(): number {
+        lightLevel(): number {
             return super.lightLevel()
         }
 
         /**
-         * Runs code when the light level goes above or below a set threshold
-         * @param threshold what light level is the cut off before the code is run
-         * @param direction run when the level is above or below your set threshold
+         * Returns true when the light level is past the provided threshold in the designated direction.
+         * @param threshold what light level to check against
+         * @param direction over or under the threshold
          */
         //% group="Solar"
         //% block="$this light level is $direction $threshold (\\%)"
-        //% blockId=fwd_solar_is_light_level_past_threshold
+        //% blockId=fwd_solar_is_past_threshold
         //% threshold.min=0 threshold.max=100 threshold.defl=5
-        fwdIsLightLevelPastThreshold(
+        isPastThreshold(
             threshold: number,
             direction: ThresholdDirection
         ): boolean {

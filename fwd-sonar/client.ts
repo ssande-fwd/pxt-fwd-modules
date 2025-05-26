@@ -16,9 +16,9 @@ namespace sensors {
         }
 
         /**
-         * Runs code when the distance goes over or under a set threshold
-         * @param threshold what distance is the cut off before the code is run
-         * @param direction run when the distance is over or under your set threshold
+         * Returns true when the distance is past the provided threshold in the designated direction.
+         * @param threshold what distance to check against
+         * @param direction over or under the threshold
          */
         //% group="Sonar"
         //% block="$this distance is $direction $threshold m"

@@ -11,20 +11,20 @@ namespace sensors {
         //% group="Moisture"
         //% block="$this level (\\%)"
         //% blockId=fwd_moisture_get_moisture_level
-        fwdMoistureLevel(): number {
+        moistureLevel(): number {
             return super.moisture()
         }
 
         /**
-         * Runs code when the moisture level goes above or below a set threshold
-         * @param threshold what moisture level is the cut off before the code is run
-         * @param direction run when the level is above or below your set threshold
+         * Returns true when the moisture level is past the provided threshold in the designated direction.
+         * @param threshold what moisture level to check against
+         * @param direction over or under the threshold
          */
         //% group="Moisture"
         //% block="$this level is $direction $threshold (\\%)"
-        //% blockId=fwd_moisture_is_moisture_level_past_threshold
+        //% blockId=fwd_moisture_is_past_threshold
         //% threshold.min=0 threshold.max=100 threshold.defl=5
-        fwdIsMoistureLevelPastThreshold(
+        isPastThreshold(
             threshold: number,
             direction: ThresholdDirection
         ): boolean {
