@@ -1,8 +1,11 @@
+// The "ADD SIMULATORS" button doesn't work for this one.
+// Need to manually add DC current/voltage measurement
+
 // voltage tests
 // voltage(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
 console.log("Voltage: " + sensors.voltage1.voltage())
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.B, function () {
     if (sensors.voltage1.isPastThreshold(5, sensors.ThresholdDirection.Over)) {
         console.log(sensors.voltage1.voltage() + " is over 5V")
     }
@@ -17,7 +20,7 @@ input.onButtonPressed(Button.A, function () {
 // current(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
 console.log("Current: " + sensors.current1.current())
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.A, function () {
     if (
         sensors.current1.isPastThreshold(100, sensors.ThresholdDirection.Over)
     ) {
