@@ -1,6 +1,6 @@
 {
     "name": "jacdac-lightbulb",
-    "version": "2.0.7",
+    "version": "2.0.8",
     "description": "Controls LED lights",
     "dependencies": {
         "core": "*",

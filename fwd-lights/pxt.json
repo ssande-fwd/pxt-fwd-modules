@@ -1,6 +1,6 @@
 {
     "name": "fwd-lights",
-    "version": "2.0.7",
+    "version": "2.0.8",
     "description": "Controls LED lights",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
