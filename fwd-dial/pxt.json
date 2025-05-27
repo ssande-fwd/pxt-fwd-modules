@@ -4,12 +4,14 @@
     "description": "FWD Edu Climate Action Kit Gen. 2 Dial",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "core": "*",
+        "jacdac": "github:microsoft/pxt-jacdac#v1.9.32",
         "jacdac-rotary-encoder": "github:microsoft/pxt-jacdac/rotary-encoder",
         "jacdac-button": "github:microsoft/pxt-jacdac/button"
     },
     "files": [
-        "client.ts"
+        "client.ts",
+        "../common/buttons.ts"
     ],
     "testFiles": [
         "test.ts"
