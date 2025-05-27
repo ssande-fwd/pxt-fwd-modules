@@ -1,6 +1,6 @@
 {
     "name": "fwd-learn-to-solder",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "FWD Edu Learn to Solder",
     "license": "MIT",
     "dependencies": {
@@ -8,7 +8,13 @@
         "jacdac-button": "github:microsoft/pxt-jacdac/button",
         "lightbulb": "github:ssande-fwd/pxt-fwd-modules/lightbulb"
     },
-    "files": ["client.ts"],
-    "testFiles": ["test.ts"],
-    "supportedTargets": ["microbit"]
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
 }

@@ -1,12 +1,18 @@
 {
     "name": "fwd-lights",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "Controls LED lights",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules#c1e3494103974e8cc86e186b49a526454904aad6",
         "lightbulb": "github:ssande-fwd/pxt-fwd-modules/lightbulb"
     },
-    "files": ["client.ts"],
-    "testFiles": ["test.ts"],
-    "supportedTargets": ["microbit"]
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
 }
