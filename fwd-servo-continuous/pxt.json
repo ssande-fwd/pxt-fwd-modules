@@ -1,0 +1,19 @@
+{
+    "name": "fwd-servo-continuous",
+    "version": "2.0.5",
+    "description": "FWD Edu Servo Continuous",
+    "license": "MIT",
+    "dependencies": {
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-servo-base": "github:ssande-fwd/pxt-fwd-modules/fwd-servo-base#08dfa74ba4dab0bce262b7e63a36f331b1413012"
+    },
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
+}
