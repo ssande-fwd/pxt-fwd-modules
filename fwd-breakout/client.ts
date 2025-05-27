@@ -84,7 +84,8 @@ namespace motors {
         //% blockId=fwd_servo_set_angle_and_wait
         //% angle.min=0 angle.max=270
         setAngleAndWait(angle: number): void {
-            let maxPauseDuration = (super.responseSpeed() / 60) * 270 + 20 || 380
+            let maxPauseDuration =
+                (super.responseSpeed() / 60) * 270 + 20 || 380
             let degreesToMove = Math.abs(
                 this.getAngle() > angle
                     ? this.getAngle() - angle
