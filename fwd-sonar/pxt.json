@@ -4,7 +4,7 @@
     "description": "FWD Edu Climate Action Kit Gen. 2 Sonar",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#c1e3494103974e8cc86e186b49a526454904aad6",
         "jacdac-distance": "github:microsoft/pxt-jacdac/distance"
     },
     "files": ["client.ts"],

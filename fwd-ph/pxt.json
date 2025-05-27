@@ -4,21 +4,15 @@
     "description": "FWD Edu pH",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#71a003ad6b1e31117af94d6e04ff864ea7ab4108",
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#c1e3494103974e8cc86e186b49a526454904aad6",
         "jacdac-acidity": "github:microsoft/pxt-jacdac/acidity"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "targetVersions": {
         "target": "7.0.61",
         "targetId": "microbit"
     },
-    "supportedTargets": [
-        "microbit"
-    ],
+    "supportedTargets": ["microbit"],
     "preferredEditor": "tsprj"
 }
