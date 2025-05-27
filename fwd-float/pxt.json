@@ -4,24 +4,15 @@
     "description": "FWD Edu Float",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#c1e3494103974e8cc86e186b49a526454904aad6",
-        "jacdac-button": "github:microsoft/pxt-jacdac/button",
-        "jacdac-servo": "github:microsoft/pxt-jacdac/servo#v1.9.32",
-        "jacdac-relay": "github:microsoft/pxt-jacdac/relay#v1.9.32",
-        "fwd-edu-breakout": "github:climate-action-kits/pxt-fwd-edu/fwd-breakout#v1.50.2"
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "jacdac-button": "github:microsoft/pxt-jacdac/button"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
     "targetVersions": {
         "target": "7.0.61",
         "targetId": "microbit"
     },
-    "supportedTargets": [
-        "microbit"
-    ],
+    "supportedTargets": ["microbit"],
     "preferredEditor": "tsprj"
 }
