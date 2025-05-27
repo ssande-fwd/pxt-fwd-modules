@@ -9,6 +9,16 @@ namespace lights {
         }
 
         /**
+         * Returns true if the light brightness is anything other than 0%.
+         */
+        //% group="Lights"
+        //% block="$this on"
+        //% blockId=fwd_lights_is_on
+        isOn(): boolean {
+            return super.isOn()
+        }
+
+        /**
          * Indicates the brightness of the light bulb. Zero means completely off and 0xffff means completely on.
          * For non-dimmable lights, the value should be clamp to 0xffff for any non-zero value.
          */
