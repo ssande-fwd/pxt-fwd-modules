@@ -4,7 +4,7 @@
 // voltage tests
 // voltage(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
-console.log("Voltage: " + sensors.voltage1.voltage())
+console.log("Voltage: " + sensors.voltage1.voltage()) // this line just ensures client is detected immediately (input block interferes)
 input.onButtonPressed(Button.B, function () {
     if (sensors.voltage1.isPastThreshold(5, sensors.ThresholdDirection.Over)) {
         console.log(sensors.voltage1.voltage() + " is over 5V")
@@ -19,7 +19,7 @@ input.onButtonPressed(Button.B, function () {
 //current tests
 // current(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
-console.log("Current: " + sensors.current1.current())
+console.log("Current: " + sensors.current1.current()) // this line just ensures client is detected immediately (input block interferes)
 input.onButtonPressed(Button.A, function () {
     if (
         sensors.current1.isPastThreshold(100, sensors.ThresholdDirection.Over)
