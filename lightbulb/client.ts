@@ -24,7 +24,7 @@ namespace modules {
         //% block="$this on"
         //% blockId=jacdac_lightbulb_is_on
         isOn(): boolean {
-            if (this._brightness.values[0] === 0) {
+            if (this._brightness.values.get(0) === 0) {
                 return false
             } else {
                 return true
