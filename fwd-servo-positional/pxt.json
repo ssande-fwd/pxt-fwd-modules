@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
-        "fwd-servo-base": "github:ssande-fwd/pxt-fwd-modules/fwd-servo-base2"
+        "fwd-servo-base": "github:ssande-fwd/pxt-fwd-modules/fwd-servo-base"
     },
     "files": [
         "client.ts"
