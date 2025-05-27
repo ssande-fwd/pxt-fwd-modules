@@ -4,17 +4,11 @@
     "description": "FWD Edu Energy",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules#c1e3494103974e8cc86e186b49a526454904aad6",
+        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-dc-current": "github:microsoft/pxt-jacdac/dc-current-measurement",
         "jacdac-dc-voltage": "github:microsoft/pxt-jacdac/dc-voltage-measurement"
     },
-    "files": [
-        "client.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "supportedTargets": [
-        "microbit"
-    ]
+    "files": ["client.ts"],
+    "testFiles": ["test.ts"],
+    "supportedTargets": ["microbit"]
 }
