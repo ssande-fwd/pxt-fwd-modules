@@ -6,7 +6,7 @@ namespace motors {
     //% block="$servo angle (°)"
     //% blockId=fwd_servopos_get_angle
     export function getAngle(servo: FwdServoClient) {
-        servo.getAngle()
+        return servo.getAngle()
     }
 
     /**
@@ -26,7 +26,7 @@ namespace motors {
      * @param angle servo angle
      */
     //% group="Servo (270° positional)"
-    //% block="set $this to $angle ° and wait"
+    //% block="set $servo to $angle ° and wait"
     //% blockId=fwd_servopos_set_angle_and_wait
     //% angle.min=0 angle.max=270
     export function setAngleAndWait(servo: FwdServoClient, angle: number) {
