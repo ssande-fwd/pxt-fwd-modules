@@ -68,7 +68,7 @@ namespace sensors {
          * @param direction over or under the threshold
          */
         //% group="Energy"
-        //% block="$this is $direction $threshold (\\V)"
+        //% block="$this is $direction $threshold (\\mA)"
         //% blockId=fwd_dccurrent_is_past_threshold
         isPastThreshold(
             threshold: number,
