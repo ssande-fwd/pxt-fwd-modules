@@ -9,9 +9,7 @@ input.onButtonPressed(Button.B, function () {
     if (sensors.voltage1.isPastThreshold(5, sensors.ThresholdDirection.Over)) {
         console.log(sensors.voltage1.voltage() + " is over 5V")
     }
-    if (
-        sensors.voltage1.isPastThreshold(25, sensors.ThresholdDirection.Under)
-    ) {
+    if (sensors.voltage1.isPastThreshold(5, sensors.ThresholdDirection.Under)) {
         console.log(sensors.voltage1.voltage() + " is under 5V")
     }
 })
