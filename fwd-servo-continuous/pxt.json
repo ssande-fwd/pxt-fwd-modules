@@ -8,7 +8,8 @@
         "fwd-servo-base": "github:ssande-fwd/pxt-fwd-modules/fwd-servo-base"
     },
     "files": [
-        "client.ts"
+        "blocks.ts",
+        "driving.ts"
     ],
     "testFiles": [
         "test.ts"
