@@ -1,13 +1,19 @@
 {
     "name": "fwd-temperature",
-    "version": "2.0.3",
+    "version": "2.0.5",
     "description": "FWD Edu Temperature",
     "license": "MIT",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-temperature": "github:microsoft/pxt-jacdac/temperature"
     },
-    "files": ["client.ts"],
-    "testFiles": ["test.ts"],
-    "supportedTargets": ["microbit"]
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
 }

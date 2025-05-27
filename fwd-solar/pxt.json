@@ -1,13 +1,19 @@
 {
     "name": "fwd-solar",
-    "version": "2.0.3",
+    "version": "2.0.5",
     "description": "FWD Edu Climate Action Kit Gen. 2 Solar",
     "license": "MIT",
     "dependencies": {
         "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
         "jacdac-light-level": "github:microsoft/pxt-jacdac/light-level"
     },
-    "files": ["client.ts"],
-    "testFiles": ["test.ts"],
-    "supportedTargets": ["microbit"]
+    "files": [
+        "client.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ]
 }
