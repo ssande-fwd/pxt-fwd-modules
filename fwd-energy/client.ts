@@ -6,25 +6,32 @@ namespace sensors {
         }
 
         /**
-         * The voltage measurement.
+         * Returns the sensor's voltage reading in V.
          */
         //% group="Energy"
-        //% block="%this measurement (V)"
-        //% blockId=fwd_dcvoltagemeasurement_measurement___get
-        measurement(): number {
+        //% block="%this V"
+        //% blockId=fwd_dcvoltage_get_voltage
+        voltage(): number {
             return super.reading()
         }
 
         /**
-         * Run code when the measurement changes by the given threshold value.
+         * Returns true when the voltage is past the provided threshold in the designated direction.
+         * @param threshold what voltage to check against
+         * @param direction over or under the threshold
          */
         //% group="Energy"
-        //% blockId=fwd_dcvoltagemeasurement_on_measurement_change
-        //% block="on %this measurement changed by %threshold (V)"
-        //% threshold.min=0
-        //% threshold.defl=1
-        onMeasurementChangedBy(threshold: number, handler: () => void): void {
-            super.onMeasurementChangedBy(threshold, handler)
+        //% block="$this is $direction $threshold (\\V)"
+        //% blockId=fwd_dcvoltage_is_past_threshold
+        isPastThreshold(
+            threshold: number,
+            direction: ThresholdDirection
+        ): boolean {
+            const difference = this.voltage() - threshold > 0
+            const isPastThreshold =
+                (direction === ThresholdDirection.Over && difference) ||
+                (direction === ThresholdDirection.Under && !difference)
+            return isPastThreshold
         }
     }
 
@@ -44,27 +51,34 @@ namespace sensors {
         }
 
         /**
-         * The current measurement.
+         * Returns the sensor's current reading in mA.
          */
         //% group="Energy"
-        //% block="%this measurement (mA)"
-        //% blockId=fwd_dccurrentmeasurement_measurement___get
-        measurement(): number {
+        //% block="%this mA"
+        //% blockId=fwd_dccurrent_get_current
+        current(): number {
             const amps = super.reading()
             const milliamps = Math.round(amps * 1000)
             return milliamps
         }
 
         /**
-         * Run code when the measurement changes by the given threshold value.
+         * Returns true when the current is past the provided threshold in the designated direction.
+         * @param threshold what current to check against
+         * @param direction over or under the threshold
          */
         //% group="Energy"
-        //% blockId=fwd_dccurrentmeasurement_on_measurement_change
-        //% block="on %this measurement changed by %threshold (mA)"
-        //% threshold.min=0
-        //% threshold.defl=1
-        onMeasurementChangedBy(threshold: number, handler: () => void): void {
-            super.onMeasurementChangedBy(threshold, handler)
+        //% block="$this is $direction $threshold (\\V)"
+        //% blockId=fwd_dccurrent_is_past_threshold
+        isPastThreshold(
+            threshold: number,
+            direction: ThresholdDirection
+        ): boolean {
+            const difference = this.current() - threshold > 0
+            const isPastThreshold =
+                (direction === ThresholdDirection.Over && difference) ||
+                (direction === ThresholdDirection.Under && !difference)
+            return isPastThreshold
         }
     }
 
