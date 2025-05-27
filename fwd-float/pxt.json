@@ -4,7 +4,7 @@
     "description": "FWD Edu Float",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
         "jacdac-button": "github:microsoft/pxt-jacdac/button"
     },
     "files": [

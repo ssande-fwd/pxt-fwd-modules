@@ -4,9 +4,9 @@
     "description": "FWD Edu Smart Solder",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
         "jacdac-button": "github:microsoft/pxt-jacdac/button",
-        "lightbulb": "github:ssande-fwd/pxt-fwd-modules/lightbulb"
+        "lightbulb": "github:ssande-fwd/pxt-fwd-base/lightbulb"
     },
     "files": [
         "client.ts"

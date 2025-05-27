@@ -4,8 +4,8 @@
     "description": "FWD Edu Servo Continuous",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
-        "fwd-servo-base": "github:ssande-fwd/pxt-fwd-modules/fwd-servo-base#v2.0.10"
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
+        "fwd-servo-base": "github:ssande-fwd/pxt-fwd-base/fwd-servo-base"
     },
     "files": [
         "blocks.ts",

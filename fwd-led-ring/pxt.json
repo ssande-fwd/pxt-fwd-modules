@@ -4,7 +4,7 @@
     "description": "FWD Edu Climate Action Kit Gen. 2 LED Ring",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
         "jacdac-led": "github:microsoft/pxt-jacdac/led"
     },
     "files": [

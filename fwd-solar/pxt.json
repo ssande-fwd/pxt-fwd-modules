@@ -4,7 +4,7 @@
     "description": "FWD Edu Climate Action Kit Gen. 2 Solar",
     "license": "MIT",
     "dependencies": {
-        "fwd-core": "github:ssande-fwd/pxt-fwd-modules",
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
         "jacdac-light-level": "github:microsoft/pxt-jacdac/light-level"
     },
     "files": [
