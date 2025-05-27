@@ -1,3 +1,4 @@
+// float tests
 // onFloatChange(state: FloatState, handler: () => void)
 // floatStateConditional(state: FloatState): boolean
 // floatState(): string

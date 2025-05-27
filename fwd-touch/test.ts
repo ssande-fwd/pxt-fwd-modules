@@ -1,3 +1,4 @@
+// touch tests
 // onEvent(event: jacdac.ButtonEvent, handler: () => void)
 // holdDuration(): number
 // isPressed(): boolean

@@ -1,7 +1,8 @@
+// temperature tests
 // temperature(): number
 // isPastThreshold(threshold: number, direction: ThresholdDirection): boolean
 console.log("temperature: " + sensors.temperature1.temperature())
-basic.forever(function () {
+input.onButtonPressed(Button.A, function () {
     if (
         sensors.temperature1.isPastThreshold(
             25,
