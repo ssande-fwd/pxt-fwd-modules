@@ -12,7 +12,7 @@ namespace lights {
          * Returns true if the light brightness is anything other than 0%.
          */
         //% group="Lights"
-        //% block="$this on"
+        //% block="$this is on"
         //% blockId=fwd_lights_is_on
         isOn(): boolean {
             return super.isOn()
