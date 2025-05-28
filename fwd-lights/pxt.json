@@ -3,8 +3,8 @@
     "version": "2.0.9",
     "description": "Controls LED lights",
     "dependencies": {
-        "fwd-base": "github:ssande-fwd/pxt-fwd-base",
-        "lightbulb": "github:ssande-fwd/pxt-fwd-base/lightbulb"
+        "fwd-base": "github:ssande-fwd/pxt-fwd-base#v1.0.1",
+        "lightbulb": "github:ssande-fwd/pxt-fwd-base/lightbulb#v1.0.1"
     },
     "files": [
         "client.ts"
